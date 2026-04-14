@@ -1,0 +1,1876 @@
+[
+  {
+    "type": "ui_atc_button",
+    "name": "Action Button",
+    "version": "1.1.0",
+    "category": "Commerce",
+    "description": "Botón de acción con soporte para slots internos (ej: iconos).",
+    "renderMode": "client",
+    "requiresProvider": {
+      "name": "CartProvider",
+      "importPath": "@FastIntent/ui"
+    },
+    "consumesContext": {
+      "hookName": "useCart",
+      "importPath": "@FastIntent/ui",
+      "fields": [
+        "addItem"
+      ]
+    },
+    "propControls": [
+      {
+        "name": "text",
+        "label": "Texto",
+        "type": "string",
+        "defaultValue": "Add to Cart"
+      },
+      {
+        "name": "color",
+        "label": "Color Fondo",
+        "type": "color",
+        "defaultValue": "#f97316"
+      },
+      {
+        "name": "productId",
+        "label": "Product ID",
+        "type": "string",
+        "defaultValue": ""
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number",
+        "defaultValue": 0
+      }
+    ],
+    "dependencies": {
+      "framer-motion": "latest"
+    },
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_atc_button&v=1.1.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "AddToCartButton",
+    "isPremium": false
+  },
+  {
+    "type": "ui_card_wrapper",
+    "name": "Enterprise Card Wrapper",
+    "version": "1.3.0",
+    "category": "Layout",
+    "description": "Contenedor de alto nivel con Navbar, Carrito y protección de estado global.",
+    "propControls": [
+      {
+        "name": "backgroundColor",
+        "label": "Fondo",
+        "type": "color",
+        "defaultValue": "var(--background)"
+      },
+      {
+        "name": "textColor",
+        "label": "Color Texto",
+        "type": "color",
+        "defaultValue": "var(--foreground)"
+      },
+      {
+        "name": "shadow",
+        "label": "Sombra",
+        "type": "enum",
+        "options": [
+          "none",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+          "2xl"
+        ],
+        "defaultValue": "sm"
+      },
+      {
+        "name": "radius",
+        "label": "Redondeado",
+        "type": "enum",
+        "options": [
+          "none",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+          "full"
+        ],
+        "defaultValue": "xl"
+      },
+      {
+        "name": "cartCount",
+        "label": "Items Carrito",
+        "type": "number",
+        "defaultValue": 0,
+        "dataBinding": {
+          "context": "CartProvider",
+          "hookName": "useCart",
+          "importPath": "@FastIntent/ui",
+          "value": "totalItems"
+        }
+      }
+    ],
+    "migrations": {},
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_card_wrapper&v=1.3.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "CardWrapper",
+    "isPremium": false
+  },
+  {
+    "type": "ui_cart_badge",
+    "name": "Cart Pulse Badge",
+    "version": "1.1.0",
+    "category": "Commerce",
+    "description": "Indicador flotante del carrito. Lee de CartContext — requiere CartProvider.",
+    "renderMode": "client",
+    "requiresProvider": {
+      "name": "CartProvider",
+      "importPath": "@FastIntent/ui"
+    },
+    "consumesContext": {
+      "hookName": "useCart",
+      "importPath": "@FastIntent/ui",
+      "fields": [
+        "totalItems"
+      ]
+    },
+    "propControls": [
+      {
+        "name": "color",
+        "label": "Color Badge",
+        "type": "color",
+        "defaultValue": "#dc2626"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_cart_badge&v=1.1.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "CartBadge",
+    "isPremium": false
+  },
+  {
+    "type": "ui_canvas_bento",
+    "name": "Bento Stress Test",
+    "version": "1.0.0",
+    "category": "Visual Features",
+    "description": "Bento Grid complejo para validar la compilación de estilos avanzados.",
+    "propControls": [],
+    "dependencies": {
+      "lucide-react": "^0.300.0",
+      "framer-motion": "^10.0.0"
+    },
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_canvas_bento&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "CanvasBento",
+    "isPremium": false
+  },
+  {
+    "type": "ui_canvas_button",
+    "name": "Canvas Button",
+    "version": "1.0.0",
+    "category": "Basic",
+    "propControls": [
+      {
+        "name": "content",
+        "label": "Texto",
+        "type": "string",
+        "defaultValue": "Button"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_canvas_button&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "CanvasButton",
+    "isPremium": false
+  },
+  {
+    "type": "ui_canvas_checkbox",
+    "name": "Checkbox",
+    "version": "1.0.0",
+    "category": "Forms",
+    "propControls": [
+      {
+        "name": "props.checked",
+        "label": "Checked",
+        "type": "boolean",
+        "defaultValue": true
+      },
+      {
+        "name": "content",
+        "label": "Label",
+        "type": "string",
+        "defaultValue": "Checkbox label"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_canvas_checkbox&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "CanvasCheckbox",
+    "isPremium": false
+  },
+  {
+    "type": "ui_canvas_header",
+    "name": "Enterprise Header",
+    "version": "1.0.0",
+    "category": "Navigation",
+    "description": "Sticky header con logo, links y acción de login.",
+    "propControls": [
+      {
+        "name": "logoText",
+        "label": "Texto Logo",
+        "type": "string",
+        "defaultValue": "ACME Corp"
+      },
+      {
+        "name": "buttonText",
+        "label": "Texto Botón",
+        "type": "string",
+        "defaultValue": "Sign in"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_canvas_header&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "CanvasHeader",
+    "isPremium": false
+  },
+  {
+    "type": "ui_canvas_input",
+    "name": "Form Input",
+    "version": "1.0.0",
+    "category": "Forms",
+    "propControls": [
+      {
+        "name": "props.placeholder",
+        "label": "Placeholder",
+        "type": "string",
+        "defaultValue": "Type something..."
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_canvas_input&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "CanvasInput",
+    "isPremium": false
+  },
+  {
+    "type": "ui_canvas_layout",
+    "name": "Canvas Layout",
+    "version": "1.0.0",
+    "category": "Layout",
+    "isSlot": true,
+    "propControls": [],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_canvas_layout&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "CanvasLayout",
+    "isPremium": false
+  },
+  {
+    "type": "ui_canvas_switch",
+    "name": "Switch/Toggle",
+    "version": "1.0.0",
+    "category": "Forms",
+    "propControls": [
+      {
+        "name": "props.active",
+        "label": "Active",
+        "type": "boolean",
+        "defaultValue": true
+      },
+      {
+        "name": "content",
+        "label": "Label",
+        "type": "string",
+        "defaultValue": "Toggle switch"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_canvas_switch&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "CanvasSwitch",
+    "isPremium": false
+  },
+  {
+    "type": "ui_canvas_text",
+    "name": "Canvas Text",
+    "version": "1.0.0",
+    "category": "Basic",
+    "propControls": [
+      {
+        "name": "content",
+        "label": "Contenido",
+        "type": "string",
+        "defaultValue": ""
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_canvas_text&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "CanvasText",
+    "isPremium": false
+  },
+  {
+    "type": "ui_footer",
+    "name": "Enterprise Static Footer",
+    "version": "1.3.0",
+    "category": "Layout",
+    "description": "Pie de página semánticamente adaptable impulsado por Design Tokens y SSOT.",
+    "propControls": [
+      {
+        "name": "companyName",
+        "label": "Nombre Empresa",
+        "type": "string",
+        "defaultValue": "FastIntent Builder",
+        "dataBinding": {
+          "context": "SiteProvider",
+          "value": "config.companyName"
+        }
+      },
+      {
+        "name": "logo",
+        "label": "Texto Logo",
+        "type": "string",
+        "defaultValue": "FastIntent"
+      },
+      {
+        "name": "backgroundColor",
+        "label": "Fondo",
+        "type": "color",
+        "defaultValue": "var(--background-dark)"
+      },
+      {
+        "name": "textColor",
+        "label": "Color Texto",
+        "type": "color",
+        "defaultValue": "var(--text-light)"
+      },
+      {
+        "name": "as",
+        "label": "Tag Semántico",
+        "type": "enum",
+        "options": [
+          "footer",
+          "section",
+          "div"
+        ],
+        "defaultValue": "footer"
+      }
+    ],
+    "migrations": {},
+    "dependencies": {
+      "@FastIntent/design-tokens": "1.0.0"
+    },
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_footer&v=1.3.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Footer",
+    "isPremium": false
+  },
+  {
+    "type": "ui_hero",
+    "name": "Enterprise Hero Master",
+    "version": "1.3.0",
+    "category": "Marketing",
+    "description": "Sección hero polimórfica optimizada para el Weaver y SSOT.",
+    "propControls": [
+      {
+        "name": "backgroundColor",
+        "label": "Fondo",
+        "type": "color",
+        "defaultValue": "var(--background-dark)"
+      },
+      {
+        "name": "padding",
+        "label": "Padding (Spacing)",
+        "type": "enum",
+        "options": [
+          "none",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+          "2xl"
+        ],
+        "defaultValue": "lg"
+      },
+      {
+        "name": "alignment",
+        "label": "Alineación",
+        "type": "enum",
+        "options": [
+          "left",
+          "center",
+          "right"
+        ],
+        "defaultValue": "center"
+      },
+      {
+        "name": "as",
+        "label": "Tag Semántico",
+        "type": "enum",
+        "options": [
+          "section",
+          "article",
+          "div",
+          "header"
+        ],
+        "defaultValue": "section"
+      }
+    ],
+    "dependencies": {
+      "framer-motion": "latest",
+      "@FastIntent/design-tokens": "1.0.0"
+    },
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_hero&v=1.3.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Hero",
+    "isPremium": false
+  },
+  {
+    "type": "ui_hero_subtitle",
+    "name": "Hero Subtitle",
+    "version": "1.0.0",
+    "isSlot": true,
+    "visibility": "internal",
+    "parentConstraint": "ui_hero",
+    "description": "Subtítulo dinámico para el Hero Section.",
+    "propControls": [
+      {
+        "name": "text",
+        "label": "Texto",
+        "type": "string",
+        "defaultValue": "Unleash your creativity."
+      },
+      {
+        "name": "color",
+        "label": "Color",
+        "type": "color",
+        "defaultValue": "#a1a1aa"
+      }
+    ],
+    "dependencies": {
+      "framer-motion": "latest"
+    },
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_hero_subtitle&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "HeroSubtitle",
+    "isPremium": false
+  },
+  {
+    "type": "ui_hero_title",
+    "name": "Hero Title",
+    "version": "1.0.0",
+    "isSlot": true,
+    "visibility": "internal",
+    "parentConstraint": "ui_hero",
+    "description": "Título dinámico para el Hero Section.",
+    "propControls": [
+      {
+        "name": "text",
+        "label": "Texto",
+        "type": "string",
+        "defaultValue": "Building the Future"
+      },
+      {
+        "name": "color",
+        "label": "Color",
+        "type": "color",
+        "defaultValue": "#ffffff"
+      }
+    ],
+    "dependencies": {
+      "framer-motion": "latest"
+    },
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_hero_title&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "HeroTitle",
+    "isPremium": false
+  },
+  {
+    "type": "navbar",
+    "name": "Enterprise Global Navbar",
+    "version": "1.2.0",
+    "isSlot": true,
+    "category": "Navigation",
+    "description": "Barra de navegación con soporte para links inteligentes, contextos globales y slots.",
+    "propControls": [
+      {
+        "name": "logoText",
+        "label": "Text / Brand Name",
+        "type": "string",
+        "defaultValue": "ACME Corp",
+        "dataBinding": {
+          "context": "SiteProvider",
+          "value": "config.companyName"
+        }
+      },
+      {
+        "name": "ctaText",
+        "label": "CTA Button Text",
+        "type": "string",
+        "defaultValue": "Sign in"
+      },
+      {
+        "name": "links",
+        "label": "Navigation Links",
+        "type": "array",
+        "defaultValue": [
+          {
+            "label": "Features",
+            "href": "/#features"
+          },
+          {
+            "label": "Pricing",
+            "href": "/#pricing"
+          }
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=navbar&v=1.2.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Navbar",
+    "isPremium": false
+  },
+  {
+    "type": "ui_shadcn_button",
+    "name": "Button (Atomic)",
+    "version": "1.0.0",
+    "category": "Actions",
+    "description": "Standard Shadcn Button with variant support.",
+    "propControls": [
+      {
+        "name": "content",
+        "label": "Text content",
+        "type": "string"
+      },
+      {
+        "name": "variant",
+        "label": "Variant",
+        "type": "select",
+        "options": [
+          "default",
+          "destructive",
+          "outline",
+          "secondary",
+          "ghost",
+          "link"
+        ]
+      },
+      {
+        "name": "size",
+        "label": "Size",
+        "type": "select",
+        "options": [
+          "default",
+          "sm",
+          "lg",
+          "icon"
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_button&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Button",
+    "isPremium": false
+  },
+  {
+    "type": "toggle",
+    "name": "Toggle",
+    "version": "1.0.0",
+    "category": "Actions",
+    "description": "Two-state toggle button.",
+    "propControls": [
+      {
+        "name": "content",
+        "label": "Label",
+        "type": "text"
+      },
+      {
+        "name": "variant",
+        "label": "Variant",
+        "type": "select",
+        "options": [
+          "default",
+          "outline"
+        ]
+      },
+      {
+        "name": "size",
+        "label": "Size",
+        "type": "select",
+        "options": [
+          "sm",
+          "default",
+          "lg"
+        ]
+      },
+      {
+        "name": "pressed",
+        "label": "Pressed",
+        "type": "boolean"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=toggle&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Toggle",
+    "isPremium": false
+  },
+  {
+    "type": "togglegroup",
+    "name": "ToggleGroup",
+    "version": "1.0.0",
+    "category": "Actions",
+    "description": "Group of toggles for multi-select or single-select.",
+    "propControls": [
+      {
+        "name": "type",
+        "label": "Type",
+        "type": "select",
+        "options": [
+          "single",
+          "multiple"
+        ]
+      },
+      {
+        "name": "variant",
+        "label": "Variant",
+        "type": "select",
+        "options": [
+          "default",
+          "outline"
+        ]
+      },
+      {
+        "name": "size",
+        "label": "Size",
+        "type": "select",
+        "options": [
+          "sm",
+          "default",
+          "lg"
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=togglegroup&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "ToggleGroup",
+    "isPremium": false
+  },
+  {
+    "type": "ui_shadcn_avatar",
+    "name": "Avatar (Atomic)",
+    "version": "1.0.0",
+    "category": "Data Display",
+    "description": "A circular avatar with image or fallback initials.",
+    "propControls": [
+      {
+        "name": "src",
+        "label": "Image URL",
+        "type": "string"
+      },
+      {
+        "name": "alt",
+        "label": "Alt text",
+        "type": "string"
+      },
+      {
+        "name": "fallback",
+        "label": "Fallback initials",
+        "type": "string"
+      },
+      {
+        "name": "size",
+        "label": "Size",
+        "type": "select",
+        "options": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_avatar&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Avatar",
+    "isPremium": false
+  },
+  {
+    "type": "ui_shadcn_badge",
+    "name": "Badge (Atomic)",
+    "version": "1.0.0",
+    "category": "Data Display",
+    "description": "A small label badge for tags, status, or categories.",
+    "propControls": [
+      {
+        "name": "content",
+        "label": "Text",
+        "type": "string"
+      },
+      {
+        "name": "variant",
+        "label": "Variant",
+        "type": "select",
+        "options": [
+          "default",
+          "secondary",
+          "outline",
+          "destructive"
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_badge&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Badge",
+    "isPremium": false
+  },
+  {
+    "type": "ui_shadcn_card",
+    "name": "Card (Atomic)",
+    "version": "1.0.0",
+    "category": "Layout",
+    "isSlot": true,
+    "isContainer": true,
+    "description": "A card container with optional image, title, description, badge, and footer.",
+    "propControls": [
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "string"
+      },
+      {
+        "name": "image",
+        "label": "Image placeholder",
+        "type": "string"
+      },
+      {
+        "name": "badge",
+        "label": "Badge text",
+        "type": "string"
+      },
+      {
+        "name": "footer",
+        "label": "Footer text",
+        "type": "string"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_card&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Card",
+    "isPremium": false
+  },
+  {
+    "type": "table",
+    "name": "Table",
+    "version": "1.0.0",
+    "category": "DataDisplay",
+    "description": "Data table with columns, rows, and optional striping.",
+    "propControls": [
+      {
+        "name": "striped",
+        "label": "Striped",
+        "type": "boolean"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=table&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Table",
+    "isPremium": false
+  },
+  {
+    "type": "ui_shadcn_checkbox",
+    "name": "Checkbox (Atomic)",
+    "version": "1.0.0",
+    "category": "Forms",
+    "description": "Standard Shadcn Checkbox for form atomic building.",
+    "propControls": [
+      {
+        "name": "label",
+        "label": "Label text",
+        "type": "string"
+      },
+      {
+        "name": "checked",
+        "label": "Is checked?",
+        "type": "boolean"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_checkbox&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Checkbox",
+    "isPremium": false
+  },
+  {
+    "type": "combobox",
+    "name": "Combobox",
+    "version": "1.0.0",
+    "category": "Inputs",
+    "description": "Searchable dropdown select. Autocomplete with filtering.",
+    "propControls": [
+      {
+        "name": "label",
+        "label": "Label",
+        "type": "text"
+      },
+      {
+        "name": "placeholder",
+        "label": "Placeholder",
+        "type": "text"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=combobox&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Combobox",
+    "isPremium": false
+  },
+  {
+    "type": "ui_shadcn_form",
+    "name": "Form Container (Atomic)",
+    "version": "1.0.0",
+    "category": "Forms",
+    "isSlot": true,
+    "isContainer": true,
+    "description": "A Shadcn-styled form container that accepts inputs and buttons as children.",
+    "propControls": [
+      {
+        "name": "title",
+        "label": "Form Title",
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "string"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_form&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Form",
+    "isPremium": false
+  },
+  {
+    "type": "ui_shadcn_input",
+    "name": "Input (Atomic)",
+    "version": "1.0.0",
+    "category": "Forms",
+    "description": "Standard Shadcn Input for atomic form building.",
+    "propControls": [
+      {
+        "name": "placeholder",
+        "label": "Placeholder",
+        "type": "string"
+      },
+      {
+        "name": "label",
+        "label": "Label",
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "string"
+      },
+      {
+        "name": "type",
+        "label": "Type",
+        "type": "select",
+        "options": [
+          "text",
+          "password",
+          "email",
+          "number",
+          "tel",
+          "url"
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_input&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Input",
+    "isPremium": false
+  },
+  {
+    "type": "radiogroup",
+    "name": "RadioGroup",
+    "version": "1.0.0",
+    "category": "Inputs",
+    "description": "Group of radio buttons for single selection.",
+    "propControls": [
+      {
+        "name": "label",
+        "label": "Label",
+        "type": "text"
+      },
+      {
+        "name": "orientation",
+        "label": "Orientation",
+        "type": "select",
+        "options": [
+          "vertical",
+          "horizontal"
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=radiogroup&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "RadioGroup",
+    "isPremium": false
+  },
+  {
+    "type": "select",
+    "name": "Select",
+    "version": "1.0.0",
+    "category": "Inputs",
+    "description": "Dropdown select with custom styling.",
+    "propControls": [
+      {
+        "name": "label",
+        "label": "Label",
+        "type": "text"
+      },
+      {
+        "name": "placeholder",
+        "label": "Placeholder",
+        "type": "text"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=select&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Select",
+    "isPremium": false
+  },
+  {
+    "type": "slider",
+    "name": "Slider",
+    "version": "1.0.0",
+    "category": "Inputs",
+    "description": "Range slider for numeric values.",
+    "propControls": [
+      {
+        "name": "label",
+        "label": "Label",
+        "type": "text"
+      },
+      {
+        "name": "min",
+        "label": "Min",
+        "type": "number"
+      },
+      {
+        "name": "max",
+        "label": "Max",
+        "type": "number"
+      },
+      {
+        "name": "defaultValue",
+        "label": "Default Value",
+        "type": "number"
+      },
+      {
+        "name": "showValue",
+        "label": "Show Value",
+        "type": "boolean"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=slider&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Slider",
+    "isPremium": false
+  },
+  {
+    "type": "switch",
+    "name": "Switch",
+    "version": "1.0.0",
+    "category": "Inputs",
+    "description": "Toggle switch for boolean settings.",
+    "propControls": [
+      {
+        "name": "label",
+        "label": "Label",
+        "type": "text"
+      },
+      {
+        "name": "checked",
+        "label": "Checked",
+        "type": "boolean"
+      },
+      {
+        "name": "disabled",
+        "label": "Disabled",
+        "type": "boolean"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=switch&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Switch",
+    "isPremium": false
+  },
+  {
+    "type": "ui_shadcn_textarea",
+    "name": "Textarea (Atomic)",
+    "version": "1.0.0",
+    "category": "Forms",
+    "description": "Standard Shadcn Textarea for long text input.",
+    "propControls": [
+      {
+        "name": "placeholder",
+        "label": "Placeholder",
+        "type": "string"
+      },
+      {
+        "name": "label",
+        "label": "Label",
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "string"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_textarea&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Textarea",
+    "isPremium": false
+  },
+  {
+    "type": "ui_shadcn_footer",
+    "name": "Footer (Atomic)",
+    "version": "1.0.0",
+    "category": "Layout",
+    "isSlot": true,
+    "isContainer": true,
+    "description": "A page footer with brand, link columns, and copyright text.",
+    "propControls": [
+      {
+        "name": "brand",
+        "label": "Brand name",
+        "type": "string"
+      },
+      {
+        "name": "copyright",
+        "label": "Copyright text",
+        "type": "string"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_footer&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "FooterBar",
+    "isPremium": false
+  },
+  {
+    "type": "ui_shadcn_heading",
+    "name": "Heading (Atomic)",
+    "version": "1.0.0",
+    "category": "Typography",
+    "description": "A semantic heading (h1-h6) with size and alignment control.",
+    "propControls": [
+      {
+        "name": "content",
+        "label": "Text",
+        "type": "string"
+      },
+      {
+        "name": "level",
+        "label": "Level (1-6)",
+        "type": "number"
+      },
+      {
+        "name": "align",
+        "label": "Align",
+        "type": "select",
+        "options": [
+          "left",
+          "center",
+          "right"
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_heading&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Heading",
+    "isPremium": false
+  },
+  {
+    "type": "ui_shadcn_image",
+    "name": "Image (Atomic)",
+    "version": "1.0.0",
+    "category": "Media",
+    "description": "An image component with placeholder fallback and aspect ratio control.",
+    "propControls": [
+      {
+        "name": "src",
+        "label": "Image URL",
+        "type": "string"
+      },
+      {
+        "name": "alt",
+        "label": "Alt text / label",
+        "type": "string"
+      },
+      {
+        "name": "aspectRatio",
+        "label": "Aspect Ratio",
+        "type": "select",
+        "options": [
+          "square",
+          "video",
+          "wide",
+          "portrait"
+        ]
+      },
+      {
+        "name": "rounded",
+        "label": "Border Radius",
+        "type": "select",
+        "options": [
+          "none",
+          "sm",
+          "md",
+          "lg",
+          "full"
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_image&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "ImagePlaceholder",
+    "isPremium": false
+  },
+  {
+    "type": "ui_shadcn_layout",
+    "name": "Layout Box (Atomic)",
+    "version": "1.0.0",
+    "category": "Layout",
+    "isSlot": true,
+    "isContainer": true,
+    "description": "A flexible container for building layouts from images using Flex or Grid.",
+    "propControls": [
+      {
+        "name": "direction",
+        "label": "Direction",
+        "type": "select",
+        "options": [
+          "horizontal",
+          "vertical",
+          "grid"
+        ]
+      },
+      {
+        "name": "gap",
+        "label": "Gap (TW units)",
+        "type": "number"
+      },
+      {
+        "name": "padding",
+        "label": "Padding (TW units)",
+        "type": "number"
+      },
+      {
+        "name": "columns",
+        "label": "Grid Columns",
+        "type": "number"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_layout&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "LayoutBox",
+    "isPremium": false
+  },
+  {
+    "type": "ui_shadcn_link",
+    "name": "Link (Atomic)",
+    "version": "1.0.0",
+    "category": "Navigation",
+    "description": "A styled anchor link with variant support.",
+    "propControls": [
+      {
+        "name": "content",
+        "label": "Text",
+        "type": "string"
+      },
+      {
+        "name": "href",
+        "label": "URL",
+        "type": "string"
+      },
+      {
+        "name": "variant",
+        "label": "Variant",
+        "type": "select",
+        "options": [
+          "default",
+          "muted",
+          "nav"
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_link&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Link",
+    "isPremium": false
+  },
+  {
+    "type": "ui_shadcn_navbar",
+    "name": "Navigation Bar (Atomic)",
+    "version": "1.0.0",
+    "category": "Layout",
+    "isSlot": true,
+    "isContainer": true,
+    "description": "A top navigation bar with brand text and children for links/buttons.",
+    "propControls": [
+      {
+        "name": "brand",
+        "label": "Brand name",
+        "type": "string"
+      },
+      {
+        "name": "sticky",
+        "label": "Sticky",
+        "type": "boolean"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_navbar&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "NavBar",
+    "isPremium": false
+  },
+  {
+    "type": "ui_shadcn_paragraph",
+    "name": "Paragraph (Atomic)",
+    "version": "1.0.0",
+    "category": "Typography",
+    "description": "A paragraph text block with size, muted, and alignment control.",
+    "propControls": [
+      {
+        "name": "content",
+        "label": "Text",
+        "type": "string"
+      },
+      {
+        "name": "size",
+        "label": "Size",
+        "type": "select",
+        "options": [
+          "sm",
+          "base",
+          "lg"
+        ]
+      },
+      {
+        "name": "muted",
+        "label": "Muted color",
+        "type": "boolean"
+      },
+      {
+        "name": "align",
+        "label": "Align",
+        "type": "select",
+        "options": [
+          "left",
+          "center",
+          "right"
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_paragraph&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Paragraph",
+    "isPremium": false
+  },
+  {
+    "type": "ui_shadcn_section",
+    "name": "Section (Atomic)",
+    "version": "1.0.0",
+    "category": "Layout",
+    "isSlot": true,
+    "isContainer": true,
+    "description": "A page section with background, padding, and max-width controls. Used for hero, pricing, testimonials, etc.",
+    "propControls": [
+      {
+        "name": "background",
+        "label": "Background",
+        "type": "select",
+        "options": [
+          "default",
+          "muted",
+          "primary",
+          "dark"
+        ]
+      },
+      {
+        "name": "paddingY",
+        "label": "Vertical Padding",
+        "type": "select",
+        "options": [
+          "sm",
+          "md",
+          "lg",
+          "xl"
+        ]
+      },
+      {
+        "name": "maxWidth",
+        "label": "Max Width",
+        "type": "select",
+        "options": [
+          "sm",
+          "md",
+          "lg",
+          "xl",
+          "full"
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_section&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Section",
+    "isPremium": false
+  },
+  {
+    "type": "ui_shadcn_separator",
+    "name": "Separator (Atomic)",
+    "version": "1.0.0",
+    "category": "Layout",
+    "description": "A horizontal or vertical separator line.",
+    "propControls": [
+      {
+        "name": "orientation",
+        "label": "Orientation",
+        "type": "select",
+        "options": [
+          "horizontal",
+          "vertical"
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_separator&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Separator",
+    "isPremium": false
+  },
+  {
+    "type": "breadcrumb",
+    "name": "Breadcrumb",
+    "version": "1.0.0",
+    "category": "Navigation",
+    "description": "Breadcrumb navigation trail.",
+    "propControls": [
+      {
+        "name": "separator",
+        "label": "Separator",
+        "type": "text"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=breadcrumb&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Breadcrumb",
+    "isPremium": false
+  },
+  {
+    "type": "pagination",
+    "name": "Pagination",
+    "version": "1.0.0",
+    "category": "Navigation",
+    "description": "Page navigation with numbered buttons.",
+    "propControls": [
+      {
+        "name": "totalPages",
+        "label": "Total Pages",
+        "type": "number"
+      },
+      {
+        "name": "defaultPage",
+        "label": "Default Page",
+        "type": "number"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=pagination&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Pagination",
+    "isPremium": false
+  },
+  {
+    "type": "alertdialog",
+    "name": "AlertDialog",
+    "version": "1.0.0",
+    "category": "Overlays",
+    "description": "Confirmation dialog with cancel/confirm actions.",
+    "propControls": [
+      {
+        "name": "trigger",
+        "label": "Trigger Text",
+        "type": "text"
+      },
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "text"
+      },
+      {
+        "name": "cancelText",
+        "label": "Cancel Text",
+        "type": "text"
+      },
+      {
+        "name": "confirmText",
+        "label": "Confirm Text",
+        "type": "text"
+      },
+      {
+        "name": "variant",
+        "label": "Variant",
+        "type": "select",
+        "options": [
+          "default",
+          "destructive"
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=alertdialog&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "AlertDialog",
+    "isPremium": false
+  },
+  {
+    "type": "toast",
+    "name": "Toast",
+    "version": "1.0.0",
+    "category": "Overlays",
+    "description": "Notification toast with auto-dismiss.",
+    "propControls": [
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "text"
+      },
+      {
+        "name": "variant",
+        "label": "Variant",
+        "type": "select",
+        "options": [
+          "default",
+          "success",
+          "destructive"
+        ]
+      },
+      {
+        "name": "duration",
+        "label": "Duration (ms)",
+        "type": "number"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=toast&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Toast",
+    "isPremium": false
+  },
+  {
+    "type": "tooltip",
+    "name": "Tooltip",
+    "version": "1.0.0",
+    "category": "Overlays",
+    "description": "Small floating label on hover.",
+    "propControls": [
+      {
+        "name": "content",
+        "label": "Text",
+        "type": "text"
+      },
+      {
+        "name": "side",
+        "label": "Side",
+        "type": "select",
+        "options": [
+          "top",
+          "bottom",
+          "left",
+          "right"
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=tooltip&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Tooltip",
+    "isPremium": false
+  },
+  {
+    "type": "accordion",
+    "name": "Accordion",
+    "version": "1.0.0",
+    "category": "Data Display",
+    "isSlot": false,
+    "isContainer": false,
+    "description": "Collapsible content sections. Great for FAQ, settings, documentation.",
+    "propControls": [
+      {
+        "name": "type",
+        "label": "Type",
+        "type": "select",
+        "options": [
+          "single",
+          "multiple"
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=accordion&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Accordion",
+    "isPremium": false
+  },
+  {
+    "type": "collapsible",
+    "name": "Collapsible",
+    "version": "1.0.0",
+    "category": "Data Display",
+    "isSlot": true,
+    "isContainer": true,
+    "description": "Single collapsible section with toggle. For expandable content.",
+    "propControls": [
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text"
+      },
+      {
+        "name": "open",
+        "label": "Open",
+        "type": "boolean"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=collapsible&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Collapsible",
+    "isPremium": false
+  },
+  {
+    "type": "contextmenu",
+    "name": "ContextMenu",
+    "version": "1.0.0",
+    "category": "Navigation",
+    "isSlot": true,
+    "isContainer": true,
+    "description": "Right-click context menu with items and shortcuts.",
+    "propControls": [],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=contextmenu&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "ContextMenu",
+    "isPremium": false
+  },
+  {
+    "type": "dialog",
+    "name": "Dialog",
+    "version": "1.0.0",
+    "category": "Overlay",
+    "isSlot": true,
+    "isContainer": true,
+    "description": "Modal dialog with trigger button, title, description, and content slot.",
+    "propControls": [
+      {
+        "name": "trigger",
+        "label": "Trigger Text",
+        "type": "text"
+      },
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "text"
+      },
+      {
+        "name": "open",
+        "label": "Open",
+        "type": "boolean"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=dialog&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Dialog",
+    "isPremium": false
+  },
+  {
+    "type": "dropdownmenu",
+    "name": "DropdownMenu",
+    "version": "1.0.0",
+    "category": "Navigation",
+    "isSlot": false,
+    "isContainer": false,
+    "description": "Dropdown menu with items, shortcuts, separators. For actions and navigation.",
+    "propControls": [
+      {
+        "name": "trigger",
+        "label": "Trigger Text",
+        "type": "text"
+      },
+      {
+        "name": "align",
+        "label": "Alignment",
+        "type": "select",
+        "options": [
+          "start",
+          "center",
+          "end"
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=dropdownmenu&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "DropdownMenu",
+    "isPremium": false
+  },
+  {
+    "type": "hovercard",
+    "name": "HoverCard",
+    "version": "1.0.0",
+    "category": "Overlay",
+    "isSlot": true,
+    "isContainer": true,
+    "description": "Card that appears on hover. Great for user profiles, previews.",
+    "propControls": [
+      {
+        "name": "trigger",
+        "label": "Trigger Text",
+        "type": "text"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=hovercard&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "HoverCard",
+    "isPremium": false
+  },
+  {
+    "type": "menubar",
+    "name": "Menubar",
+    "version": "1.0.0",
+    "category": "Navigation",
+    "isSlot": false,
+    "isContainer": false,
+    "description": "Desktop application-style menu bar with dropdown menus.",
+    "propControls": [],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=menubar&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Menubar",
+    "isPremium": false
+  },
+  {
+    "type": "navigationmenu",
+    "name": "NavigationMenu",
+    "version": "1.0.0",
+    "category": "Navigation",
+    "isSlot": false,
+    "isContainer": false,
+    "description": "Horizontal navigation with dropdown mega-menus. For site-wide navigation.",
+    "propControls": [],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=navigationmenu&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "NavigationMenu",
+    "isPremium": false
+  },
+  {
+    "type": "popover",
+    "name": "Popover",
+    "version": "1.0.0",
+    "category": "Overlay",
+    "isSlot": true,
+    "isContainer": true,
+    "description": "Floating content panel attached to a trigger button.",
+    "propControls": [
+      {
+        "name": "trigger",
+        "label": "Trigger Text",
+        "type": "text"
+      },
+      {
+        "name": "align",
+        "label": "Alignment",
+        "type": "select",
+        "options": [
+          "start",
+          "center",
+          "end"
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=popover&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Popover",
+    "isPremium": false
+  },
+  {
+    "type": "sheet",
+    "name": "Sheet",
+    "version": "1.0.0",
+    "category": "Overlay",
+    "isSlot": true,
+    "isContainer": true,
+    "description": "Slide-out panel from any edge. Great for mobile menus, filters, settings.",
+    "propControls": [
+      {
+        "name": "trigger",
+        "label": "Trigger Text",
+        "type": "text"
+      },
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "text"
+      },
+      {
+        "name": "side",
+        "label": "Side",
+        "type": "select",
+        "options": [
+          "left",
+          "right",
+          "top",
+          "bottom"
+        ]
+      },
+      {
+        "name": "open",
+        "label": "Open",
+        "type": "boolean"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=sheet&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Sheet",
+    "isPremium": false
+  },
+  {
+    "type": "tabs",
+    "name": "Tabs",
+    "version": "1.0.0",
+    "category": "Navigation",
+    "isSlot": false,
+    "isContainer": false,
+    "description": "Tabbed content switcher. For settings, categories, content organization.",
+    "propControls": [
+      {
+        "name": "defaultIndex",
+        "label": "Default Tab",
+        "type": "number"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=tabs&v=1.0.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Tabs",
+    "isPremium": false
+  },
+  {
+    "type": "ui_text",
+    "name": "Master Typography",
+    "version": "1.2.0",
+    "category": "Typography",
+    "description": "Componente de texto core impulsado por Design Tokens y SSOT.",
+    "propControls": [
+      {
+        "name": "children",
+        "label": "Texto / Contenido",
+        "type": "string",
+        "defaultValue": "Escribe algo..."
+      },
+      {
+        "name": "color",
+        "label": "Color Texto",
+        "type": "color",
+        "defaultValue": "var(--foreground)"
+      },
+      {
+        "name": "as",
+        "label": "Tag Semántico",
+        "type": "enum",
+        "options": [
+          "p",
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h5",
+          "h6",
+          "span",
+          "div"
+        ],
+        "defaultValue": "p"
+      },
+      {
+        "name": "size",
+        "label": "Tamaño",
+        "type": "enum",
+        "options": [
+          "xs",
+          "sm",
+          "base",
+          "lg",
+          "xl",
+          "2xl",
+          "3xl",
+          "4xl",
+          "5xl",
+          "6xl"
+        ],
+        "defaultValue": "base",
+        "coercesFrom": "fontSize",
+        "weaverCoercionTable": {
+          "<=12": "xs",
+          "<=14": "sm",
+          "<=16": "base",
+          "<=18": "lg",
+          "<=20": "xl",
+          "<=24": "2xl",
+          "<=30": "3xl",
+          "<=36": "4xl",
+          "<=48": "5xl",
+          ">48": "6xl"
+        }
+      },
+      {
+        "name": "weight",
+        "label": "Grosor",
+        "type": "enum",
+        "options": [
+          "light",
+          "normal",
+          "medium",
+          "semibold",
+          "bold",
+          "black"
+        ],
+        "defaultValue": "normal",
+        "coercesFrom": "fontWeight",
+        "weaverCoercionTable": {
+          "400": "normal",
+          "500": "medium",
+          "600": "semibold",
+          "900": "black",
+          "100-300": "light",
+          "700-800": "bold"
+        }
+      }
+    ],
+    "migrations": {},
+    "dependencies": {
+      "@FastIntent/design-tokens": "1.0.0"
+    },
+    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_text&v=1.2.0",
+    "importPath": "@FastIntent/ui",
+    "exportName": "Text",
+    "isPremium": false
+  }
+]

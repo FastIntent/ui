@@ -1,0 +1,54 @@
+{
+  "name": "@FastIntent/ui",
+  "version": "1.0.0",
+  "description": "FastIntent UI Kit - Free Core Components",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "pnpm run generate-registry && tsup && tsc --emitDeclarationOnly --declaration --outDir dist && node scripts/generate-catalog.js && node scripts/fix-dist.mjs",
+    "generate-registry": "tsx scripts/generate-registry.mjs",
+    "dev": "tsup --watch --onSuccess 'node scripts/generate-catalog.js'",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:4873/"
+  },
+  "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.5",
+    "@storybook/addon-essentials": "^8.6.4",
+    "@storybook/addon-interactions": "^8.6.4",
+    "@storybook/addon-onboarding": "^8.6.4",
+    "@storybook/blocks": "^8.6.4",
+    "@storybook/react": "^8.6.4",
+    "@storybook/react-vite": "^8.6.4",
+    "@storybook/test": "^8.6.4",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.20",
+    "esbuild-style-plugin": "^1.6.3",
+    "glob": "^13.0.6",
+    "postcss": "^8.5.8",
+    "storybook": "^8.6.4",
+    "tailwindcss": "4.2.2",
+    "ts-morph": "^27.0.2",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "@FastIntent/design-tokens": "link:../fastdev-design-tokens",
+    "@FastIntent/store": "link:../fastdev-store",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.7.0",
+    "tailwind-merge": "^3.5.0"
+  }
+}

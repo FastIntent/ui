@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* :root {
+    --token-primary: #4f46e5;
+    --token-secondary: #10b981;
+    --token-accent: #f97316;
+    --token-background: #ffffff;
+    --token-text: #09090b;
+    --token-muted: #71717a;
+    --token-border: #e4e4e7;
+  } */
+}

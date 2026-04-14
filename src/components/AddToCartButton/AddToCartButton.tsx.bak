@@ -1,0 +1,71 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ShoppingBag, Check } from 'lucide-react';
+
+export interface AddToCartButtonProps {
+  text?: string;
+  status?: 'idle' | 'loading' | 'added';
+  onClick?: () => void;
+}
+
+export const AddToCartButton: React.FC<AddToCartButtonProps> = ({ 
+  text = "Add to Cart", 
+  status = 'idle',
+  onClick 
+}) => {
+  const isAdded = status === 'added';
+  const isLoading = status === 'loading';
+
+  return (
+    <motion.button
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={onClick}
+      disabled={isLoading || isAdded}
+      className={`
+        relative flex items-center justify-center gap-2 overflow-hidden
+        w-full py-4 rounded-xl font-bold tracking-widest text-xs uppercase
+        transition-colors duration-300 shadow-xl disabled:opacity-80
+        ${isAdded 
+          ? 'bg-green-500 text-white shadow-green-500/20' 
+          : 'bg-zinc-900 text-white hover:bg-zinc-800'
+        }
+      `}
+    >
+      <div className="flex items-center gap-2 z-10">
+        {isLoading ? (
+           <motion.div 
+             animate={{ rotate: 360 }}
+             transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+             className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
+           />
+        ) : isAdded ? (
+          <>
+            <Check size={16} strokeWidth={3} />
+            <span>Added</span>
+          </>
+        ) : (
+          <>
+            <ShoppingBag size={16} strokeWidth={2.5} />
+            <span>{text}</span>
+          </>
+        )}
+      </div>
+    </motion.button>
+  );
+};
+
+// Metadata for Plasmic / Visual Editor
+(AddToCartButton as any).meta = {
+  name: "AddToCartButton",
+  version: "1.1.0",
+  migrations: {
+    "1.1.0": (old: any) => ({ ...old, text: old.label || old.text })
+  },
+  type: "free",
+  description: "Botón atómico interactivo UI. (v1.1.0: Migración automática de label -> text)",
+  props: {
+    text: { type: "text", defaultValue: "Add to Cart" },
+    status: { type: "select", options: ['idle', 'loading', 'added'], defaultValue: "idle" },
+  }
+};
