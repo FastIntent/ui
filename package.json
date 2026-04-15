@@ -1,7 +1,7 @@
 {
   "name": "@FastIntent/ui",
   "version": "1.0.0",
-  "description": "FastIntent UI Kit - Free Core Components",
+  "description": "FastIntent UI Kit - Free Core Components ",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
