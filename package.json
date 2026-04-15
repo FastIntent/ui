@@ -41,8 +41,8 @@
     "typescript": "^6.0.2"
   },
   "dependencies": {
-    "@FastIntent/design-tokens": "link:../FastIntent-design-tokens",
-    "@FastIntent/store": "link:../FastIntent-store",
+    "@FastIntent/design-tokens": "git+https://github.com/FastIntent/design-tokens.git#v1.0.0",
+    "@FastIntent/store": "git+https://github.com/FastIntent/store.git#v1.0.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.7.0",
