@@ -15,7 +15,7 @@ type Story = StoryObj<typeof Footer>;
 
 export const Default: Story = {
   args: {
-    logo: 'FastDev',
+    logo: 'FastIntent',
     backgroundColor: '#09090b',
     textColor: '#ffffff',
   },

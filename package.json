@@ -16,9 +16,6 @@
     "react": ">=18",
     "react-dom": ">=18"
   },
-  "publishConfig": {
-    "registry": "http://localhost:4873/"
-  },
   "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.5",
@@ -44,8 +41,8 @@
     "typescript": "^6.0.2"
   },
   "dependencies": {
-    "@FastIntent/design-tokens": "link:../fastdev-design-tokens",
-    "@FastIntent/store": "link:../fastdev-store",
+    "@FastIntent/design-tokens": "link:../FastIntent-design-tokens",
+    "@FastIntent/store": "link:../FastIntent-store",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.7.0",
