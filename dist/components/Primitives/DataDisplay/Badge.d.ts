@@ -1,7 +1,9 @@
-import React from 'react';
-interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-    content: string;
-    variant?: 'default' | 'secondary' | 'outline' | 'destructive';
+import * as React from "react";
+import { type VariantProps } from "class-variance-authority";
+declare const badgeVariants: (props?: ({
+    variant?: "default" | "outline" | "destructive" | "secondary" | "ghost" | null | undefined;
+} & import("class-variance-authority/types").ClassProp) | undefined) => string;
+export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof badgeVariants> {
 }
-export declare const Badge: React.FC<BadgeProps>;
-export {};
+export declare const Badge: React.ForwardRefExoticComponent<BadgeProps & React.RefAttributes<HTMLDivElement>>;
+export { badgeVariants };

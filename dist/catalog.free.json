@@ -8,11 +8,11 @@
     "renderMode": "client",
     "requiresProvider": {
       "name": "CartProvider",
-      "importPath": "@FastIntent/ui"
+      "importPath": "@fastintent/ui"
     },
     "consumesContext": {
       "hookName": "useCart",
-      "importPath": "@FastIntent/ui",
+      "importPath": "@fastintent/ui",
       "fields": [
         "addItem"
       ]
@@ -46,10 +46,11 @@
     "dependencies": {
       "framer-motion": "latest"
     },
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_atc_button&v=1.1.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_atc_button&v=1.1.0",
+    "importPath": "@fastintent/ui",
     "exportName": "AddToCartButton",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_card_wrapper",
@@ -106,16 +107,17 @@
         "dataBinding": {
           "context": "CartProvider",
           "hookName": "useCart",
-          "importPath": "@FastIntent/ui",
+          "importPath": "@fastintent/ui",
           "value": "totalItems"
         }
       }
     ],
     "migrations": {},
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_card_wrapper&v=1.3.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_card_wrapper&v=1.3.0",
+    "importPath": "@fastintent/ui",
     "exportName": "CardWrapper",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_cart_badge",
@@ -126,11 +128,11 @@
     "renderMode": "client",
     "requiresProvider": {
       "name": "CartProvider",
-      "importPath": "@FastIntent/ui"
+      "importPath": "@fastintent/ui"
     },
     "consumesContext": {
       "hookName": "useCart",
-      "importPath": "@FastIntent/ui",
+      "importPath": "@fastintent/ui",
       "fields": [
         "totalItems"
       ]
@@ -143,10 +145,11 @@
         "defaultValue": "#dc2626"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_cart_badge&v=1.1.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_cart_badge&v=1.1.0",
+    "importPath": "@fastintent/ui",
     "exportName": "CartBadge",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_canvas_bento",
@@ -159,10 +162,11 @@
       "lucide-react": "^0.300.0",
       "framer-motion": "^10.0.0"
     },
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_canvas_bento&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_canvas_bento&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "CanvasBento",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_canvas_button",
@@ -177,10 +181,11 @@
         "defaultValue": "Button"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_canvas_button&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_canvas_button&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "CanvasButton",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_canvas_checkbox",
@@ -201,10 +206,11 @@
         "defaultValue": "Checkbox label"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_canvas_checkbox&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_canvas_checkbox&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "CanvasCheckbox",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_canvas_header",
@@ -226,10 +232,11 @@
         "defaultValue": "Sign in"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_canvas_header&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_canvas_header&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "CanvasHeader",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_canvas_input",
@@ -244,10 +251,11 @@
         "defaultValue": "Type something..."
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_canvas_input&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_canvas_input&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "CanvasInput",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_canvas_layout",
@@ -256,10 +264,11 @@
     "category": "Layout",
     "isSlot": true,
     "propControls": [],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_canvas_layout&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_canvas_layout&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "CanvasLayout",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_canvas_switch",
@@ -280,10 +289,11 @@
         "defaultValue": "Toggle switch"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_canvas_switch&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_canvas_switch&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "CanvasSwitch",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_canvas_text",
@@ -298,10 +308,169 @@
         "defaultValue": ""
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_canvas_text&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_canvas_text&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "CanvasText",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
+  },
+  {
+    "type": "ui_sticky_header",
+    "name": "Sticky Header",
+    "version": "2.0.0",
+    "migrations": {
+      "1.1.0": null,
+      "2.0.0": null
+    },
+    "category": "Navigation",
+    "description": "Header con scroll-reveal sticky, dos slots editables (nav + cta), 5 estilos de layout y drawer mobile. Logo configurable como texto o imagen.",
+    "isContainer": true,
+    "propControls": [
+      {
+        "name": "logoText",
+        "label": "Logo (texto)",
+        "type": "string",
+        "defaultValue": "Shop"
+      },
+      {
+        "name": "logoSrc",
+        "label": "Logo (URL imagen)",
+        "type": "string",
+        "defaultValue": ""
+      },
+      {
+        "name": "variant",
+        "label": "Estilo de layout",
+        "type": "select",
+        "options": [
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h5"
+        ],
+        "defaultValue": "h1"
+      },
+      {
+        "name": "width",
+        "label": "Ancho",
+        "type": "select",
+        "options": [
+          "full",
+          "box"
+        ],
+        "defaultValue": "full"
+      },
+      {
+        "name": "maxWidth",
+        "label": "Ancho máximo (px, sólo si width=box)",
+        "type": "number",
+        "defaultValue": 1240
+      },
+      {
+        "name": "height",
+        "label": "Altura mínima desktop (px, 0=auto)",
+        "type": "number",
+        "defaultValue": 0
+      }
+    ],
+    "defaultChildren": [
+      {
+        "type": "slot",
+        "name": "Nav links",
+        "styles": {},
+        "children": [
+          {
+            "type": "html_tag",
+            "tag": "a",
+            "name": "Home link",
+            "content": "Home",
+            "styles": {
+              "color": "#3f3f46",
+              "fontSize": 14,
+              "fontWeight": 500
+            },
+            "props": {
+              "href": "#"
+            }
+          },
+          {
+            "type": "html_tag",
+            "tag": "a",
+            "name": "Shop link",
+            "content": "Shop",
+            "styles": {
+              "color": "#3f3f46",
+              "fontSize": 14,
+              "fontWeight": 500
+            },
+            "props": {
+              "href": "#"
+            }
+          },
+          {
+            "type": "html_tag",
+            "tag": "a",
+            "name": "About link",
+            "content": "About",
+            "styles": {
+              "color": "#3f3f46",
+              "fontSize": 14,
+              "fontWeight": 500
+            },
+            "props": {
+              "href": "#"
+            }
+          },
+          {
+            "type": "html_tag",
+            "tag": "a",
+            "name": "Contact link",
+            "content": "Contact",
+            "styles": {
+              "color": "#3f3f46",
+              "fontSize": 14,
+              "fontWeight": 500
+            },
+            "props": {
+              "href": "#"
+            }
+          }
+        ]
+      },
+      {
+        "type": "slot",
+        "name": "CTA",
+        "styles": {},
+        "children": [
+          {
+            "type": "html_tag",
+            "tag": "a",
+            "name": "Sign in CTA",
+            "content": "Sign in",
+            "styles": {
+              "backgroundColor": "#18181b",
+              "color": "#ffffff",
+              "paddingLeft": 20,
+              "paddingRight": 20,
+              "paddingTop": 10,
+              "paddingBottom": 10,
+              "borderRadius": 6,
+              "fontSize": 13,
+              "fontWeight": 600
+            },
+            "props": {
+              "href": "#"
+            }
+          }
+        ]
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_sticky_header&v=2.0.0",
+    "importPath": "@fastintent/ui",
+    "exportName": "StickyHeader",
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_footer",
@@ -352,12 +521,13 @@
     ],
     "migrations": {},
     "dependencies": {
-      "@FastIntent/design-tokens": "1.0.0"
+      "@fastintent/design-tokens": "1.0.0"
     },
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_footer&v=1.3.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_footer&v=1.3.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Footer",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_hero",
@@ -412,17 +582,19 @@
     ],
     "dependencies": {
       "framer-motion": "latest",
-      "@FastIntent/design-tokens": "1.0.0"
+      "@fastintent/design-tokens": "1.0.0"
     },
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_hero&v=1.3.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_hero&v=1.3.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Hero",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_hero_subtitle",
     "name": "Hero Subtitle",
     "version": "1.0.0",
+    "category": "Marketing",
     "isSlot": true,
     "visibility": "internal",
     "parentConstraint": "ui_hero",
@@ -444,15 +616,17 @@
     "dependencies": {
       "framer-motion": "latest"
     },
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_hero_subtitle&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_hero_subtitle&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "HeroSubtitle",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_hero_title",
     "name": "Hero Title",
     "version": "1.0.0",
+    "category": "Marketing",
     "isSlot": true,
     "visibility": "internal",
     "parentConstraint": "ui_hero",
@@ -474,10 +648,11 @@
     "dependencies": {
       "framer-motion": "latest"
     },
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_hero_title&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_hero_title&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "HeroTitle",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "navbar",
@@ -519,23 +694,19 @@
         ]
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=navbar&v=1.2.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=navbar&v=1.2.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Navbar",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_shadcn_button",
-    "name": "Button (Atomic)",
-    "version": "1.0.0",
+    "name": "Button",
+    "version": "2.0.0",
     "category": "Actions",
-    "description": "Standard Shadcn Button with variant support.",
+    "description": "Composable shadcn Button with CVA-driven variants and sizes.",
     "propControls": [
-      {
-        "name": "content",
-        "label": "Text content",
-        "type": "string"
-      },
       {
         "name": "variant",
         "label": "Variant",
@@ -561,10 +732,11 @@
         ]
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_button&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_button&v=2.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Button",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "toggle",
@@ -603,10 +775,11 @@
         "type": "boolean"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=toggle&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=toggle&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Toggle",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "togglegroup",
@@ -644,10 +817,11 @@
         ]
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=togglegroup&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=togglegroup&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "ToggleGroup",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_shadcn_avatar",
@@ -682,23 +856,19 @@
         ]
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_avatar&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_avatar&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Avatar",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_shadcn_badge",
-    "name": "Badge (Atomic)",
-    "version": "1.0.0",
+    "name": "Badge",
+    "version": "2.0.0",
     "category": "Data Display",
-    "description": "A small label badge for tags, status, or categories.",
+    "description": "Composable shadcn Badge with CVA-driven variants.",
     "propControls": [
-      {
-        "name": "content",
-        "label": "Text",
-        "type": "string"
-      },
       {
         "name": "variant",
         "label": "Variant",
@@ -706,96 +876,71 @@
         "options": [
           "default",
           "secondary",
+          "destructive",
           "outline",
-          "destructive"
+          "ghost"
         ]
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_badge&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_badge&v=2.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Badge",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_shadcn_card",
-    "name": "Card (Atomic)",
-    "version": "1.0.0",
+    "name": "Card",
+    "version": "2.0.0",
     "category": "Layout",
     "isSlot": true,
     "isContainer": true,
-    "description": "A card container with optional image, title, description, badge, and footer.",
-    "propControls": [
-      {
-        "name": "title",
-        "label": "Title",
-        "type": "string"
-      },
-      {
-        "name": "description",
-        "label": "Description",
-        "type": "string"
-      },
-      {
-        "name": "image",
-        "label": "Image placeholder",
-        "type": "string"
-      },
-      {
-        "name": "badge",
-        "label": "Badge text",
-        "type": "string"
-      },
-      {
-        "name": "footer",
-        "label": "Footer text",
-        "type": "string"
-      }
-    ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_card&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "description": "Composable shadcn Card. Compose with CardHeader, CardTitle, CardDescription, CardContent, CardFooter, CardAction.",
+    "propControls": [],
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_card&v=2.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Card",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "table",
     "name": "Table",
-    "version": "1.0.0",
-    "category": "DataDisplay",
-    "description": "Data table with columns, rows, and optional striping.",
-    "propControls": [
-      {
-        "name": "striped",
-        "label": "Striped",
-        "type": "boolean"
-      }
-    ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=table&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "version": "2.0.0",
+    "category": "Data Display",
+    "isSlot": true,
+    "isContainer": true,
+    "description": "Composable shadcn Table. Compose with TableHeader, TableBody, TableRow, TableHead, TableCell.",
+    "propControls": [],
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=table&v=2.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Table",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_shadcn_checkbox",
-    "name": "Checkbox (Atomic)",
-    "version": "1.0.0",
+    "name": "Checkbox",
+    "version": "2.0.0",
     "category": "Forms",
-    "description": "Standard Shadcn Checkbox for form atomic building.",
+    "description": "Composable shadcn Checkbox built on Radix UI primitive.",
     "propControls": [
       {
-        "name": "label",
-        "label": "Label text",
-        "type": "string"
+        "name": "checked",
+        "label": "Checked",
+        "type": "boolean"
       },
       {
-        "name": "checked",
-        "label": "Is checked?",
+        "name": "disabled",
+        "label": "Disabled",
         "type": "boolean"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_checkbox&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_checkbox&v=2.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Checkbox",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "combobox",
@@ -815,10 +960,11 @@
         "type": "text"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=combobox&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=combobox&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Combobox",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_shadcn_form",
@@ -840,33 +986,19 @@
         "type": "string"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_form&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_form&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Form",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_shadcn_input",
-    "name": "Input (Atomic)",
-    "version": "1.0.0",
+    "name": "Input",
+    "version": "2.0.0",
     "category": "Forms",
-    "description": "Standard Shadcn Input for atomic form building.",
+    "description": "Composable shadcn Input. Native HTML input with shadcn styling.",
     "propControls": [
-      {
-        "name": "placeholder",
-        "label": "Placeholder",
-        "type": "string"
-      },
-      {
-        "name": "label",
-        "label": "Label",
-        "type": "string"
-      },
-      {
-        "name": "description",
-        "label": "Description",
-        "type": "string"
-      },
       {
         "name": "type",
         "label": "Type",
@@ -877,14 +1009,46 @@
           "email",
           "number",
           "tel",
-          "url"
+          "url",
+          "search",
+          "date"
         ]
+      },
+      {
+        "name": "placeholder",
+        "label": "Placeholder",
+        "type": "string"
+      },
+      {
+        "name": "disabled",
+        "label": "Disabled",
+        "type": "boolean"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_input&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_input&v=2.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Input",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
+  },
+  {
+    "type": "ui_shadcn_label",
+    "name": "Label",
+    "version": "1.0.0",
+    "category": "Forms",
+    "description": "Composable shadcn Label. Associate with inputs via htmlFor.",
+    "propControls": [
+      {
+        "name": "htmlFor",
+        "label": "For (input id)",
+        "type": "string"
+      }
+    ],
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_label&v=1.0.0",
+    "importPath": "@fastintent/ui",
+    "exportName": "Label",
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "radiogroup",
@@ -908,33 +1072,26 @@
         ]
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=radiogroup&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=radiogroup&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "RadioGroup",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "select",
     "name": "Select",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "category": "Inputs",
-    "description": "Dropdown select with custom styling.",
-    "propControls": [
-      {
-        "name": "label",
-        "label": "Label",
-        "type": "text"
-      },
-      {
-        "name": "placeholder",
-        "label": "Placeholder",
-        "type": "text"
-      }
-    ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=select&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "isSlot": true,
+    "isContainer": true,
+    "description": "Composable shadcn Select built on Radix UI. Compose with SelectTrigger, SelectValue, SelectContent, SelectItem, SelectGroup.",
+    "propControls": [],
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=select&v=2.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Select",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "slider",
@@ -969,10 +1126,11 @@
         "type": "boolean"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=slider&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=slider&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Slider",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "switch",
@@ -997,10 +1155,11 @@
         "type": "boolean"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=switch&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=switch&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Switch",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_shadcn_textarea",
@@ -1025,10 +1184,11 @@
         "type": "string"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_textarea&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_textarea&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Textarea",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_shadcn_footer",
@@ -1050,10 +1210,11 @@
         "type": "string"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_footer&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_footer&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "FooterBar",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_shadcn_heading",
@@ -1083,10 +1244,11 @@
         ]
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_heading&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_heading&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Heading",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_shadcn_image",
@@ -1129,10 +1291,11 @@
         ]
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_image&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_image&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "ImagePlaceholder",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_shadcn_layout",
@@ -1169,10 +1332,11 @@
         "type": "number"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_layout&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_layout&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "LayoutBox",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_shadcn_link",
@@ -1202,10 +1366,11 @@
         ]
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_link&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_link&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Link",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_shadcn_navbar",
@@ -1227,10 +1392,11 @@
         "type": "boolean"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_navbar&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_navbar&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "NavBar",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_shadcn_paragraph",
@@ -1270,10 +1436,11 @@
         ]
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_paragraph&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_paragraph&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Paragraph",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_shadcn_section",
@@ -1319,10 +1486,11 @@
         ]
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_section&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_section&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Section",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_shadcn_separator",
@@ -1341,28 +1509,26 @@
         ]
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_shadcn_separator&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_shadcn_separator&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Separator",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "breadcrumb",
     "name": "Breadcrumb",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "category": "Navigation",
-    "description": "Breadcrumb navigation trail.",
-    "propControls": [
-      {
-        "name": "separator",
-        "label": "Separator",
-        "type": "text"
-      }
-    ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=breadcrumb&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "isSlot": true,
+    "isContainer": true,
+    "description": "Composable shadcn Breadcrumb. Compose with BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis.",
+    "propControls": [],
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=breadcrumb&v=2.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Breadcrumb",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "pagination",
@@ -1382,10 +1548,11 @@
         "type": "number"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=pagination&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=pagination&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Pagination",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "alertdialog",
@@ -1429,10 +1596,11 @@
         ]
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=alertdialog&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=alertdialog&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "AlertDialog",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "toast",
@@ -1467,10 +1635,11 @@
         "type": "number"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=toast&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=toast&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Toast",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "tooltip",
@@ -1496,10 +1665,11 @@
         ]
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=tooltip&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=tooltip&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Tooltip",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "accordion",
@@ -1520,10 +1690,11 @@
         ]
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=accordion&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=accordion&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Accordion",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "collapsible",
@@ -1545,10 +1716,26 @@
         "type": "boolean"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=collapsible&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=collapsible&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Collapsible",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
+  },
+  {
+    "type": "command",
+    "name": "Command",
+    "version": "2.0.0",
+    "category": "Navigation",
+    "isSlot": true,
+    "isContainer": true,
+    "description": "Composable shadcn Command palette built on cmdk. Compose with CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandSeparator, CommandShortcut.",
+    "propControls": [],
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=command&v=2.0.0",
+    "importPath": "@fastintent/ui",
+    "exportName": "Command",
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "contextmenu",
@@ -1559,16 +1746,17 @@
     "isContainer": true,
     "description": "Right-click context menu with items and shortcuts.",
     "propControls": [],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=contextmenu&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=contextmenu&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "ContextMenu",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "dialog",
     "name": "Dialog",
     "version": "1.0.0",
-    "category": "Overlay",
+    "category": "Overlays",
     "isSlot": true,
     "isContainer": true,
     "description": "Modal dialog with trigger button, title, description, and content slot.",
@@ -1594,46 +1782,32 @@
         "type": "boolean"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=dialog&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=dialog&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Dialog",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "dropdownmenu",
     "name": "DropdownMenu",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "category": "Navigation",
-    "isSlot": false,
-    "isContainer": false,
-    "description": "Dropdown menu with items, shortcuts, separators. For actions and navigation.",
-    "propControls": [
-      {
-        "name": "trigger",
-        "label": "Trigger Text",
-        "type": "text"
-      },
-      {
-        "name": "align",
-        "label": "Alignment",
-        "type": "select",
-        "options": [
-          "start",
-          "center",
-          "end"
-        ]
-      }
-    ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=dropdownmenu&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "isSlot": true,
+    "isContainer": true,
+    "description": "Composable shadcn DropdownMenu built on Radix UI. Compose with DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuLabel, DropdownMenuGroup.",
+    "propControls": [],
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=dropdownmenu&v=2.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "DropdownMenu",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "hovercard",
     "name": "HoverCard",
     "version": "1.0.0",
-    "category": "Overlay",
+    "category": "Overlays",
     "isSlot": true,
     "isContainer": true,
     "description": "Card that appears on hover. Great for user profiles, previews.",
@@ -1644,10 +1818,11 @@
         "type": "text"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=hovercard&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=hovercard&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "HoverCard",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "menubar",
@@ -1658,10 +1833,11 @@
     "isContainer": false,
     "description": "Desktop application-style menu bar with dropdown menus.",
     "propControls": [],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=menubar&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=menubar&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Menubar",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "navigationmenu",
@@ -1672,16 +1848,17 @@
     "isContainer": false,
     "description": "Horizontal navigation with dropdown mega-menus. For site-wide navigation.",
     "propControls": [],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=navigationmenu&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=navigationmenu&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "NavigationMenu",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "popover",
     "name": "Popover",
     "version": "1.0.0",
-    "category": "Overlay",
+    "category": "Overlays",
     "isSlot": true,
     "isContainer": true,
     "description": "Floating content panel attached to a trigger button.",
@@ -1702,16 +1879,17 @@
         ]
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=popover&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=popover&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Popover",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "sheet",
     "name": "Sheet",
     "version": "1.0.0",
-    "category": "Overlay",
+    "category": "Overlays",
     "isSlot": true,
     "isContainer": true,
     "description": "Slide-out panel from any edge. Great for mobile menus, filters, settings.",
@@ -1748,10 +1926,11 @@
         "type": "boolean"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=sheet&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=sheet&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Sheet",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "tabs",
@@ -1768,10 +1947,11 @@
         "type": "number"
       }
     ],
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=tabs&v=1.0.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=tabs&v=1.0.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Tabs",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   },
   {
     "type": "ui_text",
@@ -1866,11 +2046,12 @@
     ],
     "migrations": {},
     "dependencies": {
-      "@FastIntent/design-tokens": "1.0.0"
+      "@fastintent/design-tokens": "1.0.0"
     },
-    "url": "/api/remote-asset?pkg=%40FastIntent%2Fui&comp=ui_text&v=1.2.0",
-    "importPath": "@FastIntent/ui",
+    "url": "/api/remote-asset?pkg=%40fastintent%2Fui&comp=ui_text&v=1.2.0",
+    "importPath": "@fastintent/ui",
     "exportName": "Text",
-    "isPremium": false
+    "isPremium": false,
+    "pkgVersion": "1.3.1"
   }
 ]

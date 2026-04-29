@@ -47,7 +47,7 @@ Popover.displayName = 'Popover';
   type: "popover",
   name: "Popover",
   version: "1.0.0",
-  category: "Overlay",
+  category: "Overlays",
   isSlot: true,
   isContainer: true,
   description: "Floating content panel attached to a trigger button.",

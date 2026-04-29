@@ -1,9 +1,3 @@
-import React from 'react';
-interface CheckboxProps {
-    label?: string;
-    checked?: boolean;
-    onCheckedChange?: (checked: boolean) => void;
-    className?: string;
-}
-export declare const Checkbox: React.FC<CheckboxProps>;
-export {};
+import * as React from "react";
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
+export declare const Checkbox: React.ForwardRefExoticComponent<Omit<CheckboxPrimitive.CheckboxProps & React.RefAttributes<HTMLButtonElement>, "ref"> & React.RefAttributes<HTMLButtonElement>>;

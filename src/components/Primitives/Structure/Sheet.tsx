@@ -72,7 +72,7 @@ Sheet.displayName = 'Sheet';
   type: "sheet",
   name: "Sheet",
   version: "1.0.0",
-  category: "Overlay",
+  category: "Overlays",
   isSlot: true,
   isContainer: true,
   description: "Slide-out panel from any edge. Great for mobile menus, filters, settings.",

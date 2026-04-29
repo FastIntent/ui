@@ -79,7 +79,7 @@ export const CardWrapper = forwardRef<HTMLDivElement, CardWrapperProps>(
       dataBinding: {
         context: "CartProvider",
         hookName: "useCart",
-        importPath: "@FastIntent/ui",
+        importPath: "@fastintent/ui",
         value: "totalItems"
       }
     }

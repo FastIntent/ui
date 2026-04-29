@@ -5,13 +5,13 @@ const Module = require('module');
 // 🧬 Mock global store for build-time catalog generation
 const originalRequire = Module.prototype.require;
 Module.prototype.require = function(p) {
-  if (p === '@FastIntent/store') return { useEditorStore: () => ({}) };
+  if (p === '@fastintent/store') return { useEditorStore: () => ({}) };
   return originalRequire.apply(this, arguments);
 };
 
 // Cargar el bundle CJS recién compilado
 const pkgPath = path.join(process.cwd(), './dist/index.js');
-const pkgName = '@FastIntent/ui';
+const pkgName = '@fastintent/ui';
 
 if (!fs.existsSync(pkgPath)) {
   console.error('[Error] No se encontró dist/index.js. Compila la librería primero.');
@@ -32,6 +32,9 @@ console.log(`[catalog-gen] Using base URL: ${ASSET_BASE_URL}`);
 
 const catalog = getSafeCatalog(pkgName, ASSET_BASE_URL);
 
+const pkg = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8'));
+catalog.forEach(c => { c.pkgVersion = pkg.version; });
+
 // Filtrar por free / premium
 const free = catalog.filter(c => !c.isPremium);
 const pro = catalog.filter(c => c.isPremium);
@@ -40,4 +43,4 @@ const pro = catalog.filter(c => c.isPremium);
 fs.writeFileSync(path.join(process.cwd(), './dist/catalog.free.json'), JSON.stringify(free, null, 2));
 fs.writeFileSync(path.join(process.cwd(), './dist/catalog.pro.json'), JSON.stringify(pro, null, 2));
 
-console.log(`[Catalog Generator] Generados: catalog.free.json (${free.length} componentes) y catalog.pro.json (${pro.length} componentes) en @FastIntent/ui`);
+console.log(`[Catalog Generator] Generados: catalog.free.json (${free.length} componentes) y catalog.pro.json (${pro.length} componentes) en @fastintent/ui`);

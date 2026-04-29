@@ -39,7 +39,7 @@ HoverCard.displayName = 'HoverCard';
   type: "hovercard",
   name: "HoverCard",
   version: "1.0.0",
-  category: "Overlay",
+  category: "Overlays",
   isSlot: true,
   isContainer: true,
   description: "Card that appears on hover. Great for user profiles, previews.",

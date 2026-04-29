@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors, typography, spacing } from '@FastIntent/design-tokens';
+import { colors, typography, spacing } from '@fastintent/design-tokens';
 
 /**
  * 🎨 COMPONENTE DE TEXTO POLIMÓRFICO PREMIUM
@@ -101,7 +101,7 @@ export const Text = <C extends React.ElementType = 'p'>({
     }
   },
   dependencies: {
-    "@FastIntent/design-tokens": "1.0.0",
+    "@fastintent/design-tokens": "1.0.0",
   },
 };
 

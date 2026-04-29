@@ -1,66 +1,100 @@
-import React from 'react';
+"use client";
 
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  title?: string;
-  description?: string;
-  image?: string;
-  badge?: string;
-  footer?: string;
+import * as React from "react";
+import { cn } from "../../../lib/utils";
+
+/**
+ * Card primitives — follow the latest shadcn/ui pattern with `data-slot`
+ * attributes for slot-based composition & theming.
+ */
+
+export const Card = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">>(
+  ({ className, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        data-slot="card"
+        className={cn(
+          "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border border-border py-6 shadow-sm",
+          className
+        )}
+        {...props}
+      />
+    );
+  }
+);
+Card.displayName = "Card";
+
+export function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-header"
+      className={cn(
+        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
+        className
+      )}
+      {...props}
+    />
+  );
 }
 
-export const Card: React.FC<CardProps> = ({
-  title,
-  description,
-  image,
-  badge,
-  footer,
-  children,
-  className = '',
-  ...rest
-}) => {
+export function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
-    <div {...rest} className={`rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-sm overflow-hidden ${className}`}>
-      {image && (
-        <div className="relative">
-          <div className="w-full h-48 bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-400 text-sm">
-            {image}
-          </div>
-          {badge && (
-            <span className="absolute top-2 left-2 px-2 py-0.5 bg-primary text-primary-foreground text-xs font-medium rounded">
-              {badge}
-            </span>
-          )}
-        </div>
-      )}
-      <div className="p-4 flex flex-col gap-2">
-        {title && <h3 className="font-semibold text-zinc-900 dark:text-white">{title}</h3>}
-        {description && <p className="text-sm text-zinc-500 dark:text-zinc-400">{description}</p>}
-        {children}
-      </div>
-      {footer && (
-        <div className="px-4 py-3 border-t border-zinc-200 dark:border-zinc-800 text-sm text-zinc-500">
-          {footer}
-        </div>
-      )}
-    </div>
+    <div
+      data-slot="card-title"
+      className={cn("leading-none font-semibold", className)}
+      {...props}
+    />
   );
-};
+}
 
-Card.displayName = 'Card';
+export function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-description"
+      className={cn("text-muted-foreground text-sm", className)}
+      {...props}
+    />
+  );
+}
+
+export function CardAction({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-action"
+      className={cn("col-start-2 row-span-2 row-start-1 self-start justify-self-end", className)}
+      {...props}
+    />
+  );
+}
+
+export function CardContent({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-content"
+      className={cn("px-6", className)}
+      {...props}
+    />
+  );
+}
+
+export function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-footer"
+      className={cn("flex items-center px-6 [.border-t]:pt-6", className)}
+      {...props}
+    />
+  );
+}
 
 (Card as any).meta = {
   type: "ui_shadcn_card",
-  name: "Card (Atomic)",
-  version: "1.0.0",
+  name: "Card",
+  version: "2.0.0",
   category: "Layout",
   isSlot: true,
   isContainer: true,
-  description: "A card container with optional image, title, description, badge, and footer.",
-  propControls: [
-    { name: "title", label: "Title", type: "string" },
-    { name: "description", label: "Description", type: "string" },
-    { name: "image", label: "Image placeholder", type: "string" },
-    { name: "badge", label: "Badge text", type: "string" },
-    { name: "footer", label: "Footer text", type: "string" },
-  ]
+  description: "Composable shadcn Card. Compose with CardHeader, CardTitle, CardDescription, CardContent, CardFooter, CardAction.",
+  propControls: [],
 };

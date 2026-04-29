@@ -14,6 +14,7 @@ import { CanvasInput } from './components/Elements/CanvasInput';
 import { CanvasLayout } from './components/Elements/CanvasLayout';
 import { CanvasSwitch } from './components/Elements/CanvasSwitch';
 import { CanvasText } from './components/Elements/CanvasText';
+import { StickyHeader } from './components/Elements/StickyHeader';
 import { Footer } from './components/Footer/Footer';
 import { Hero } from './components/Hero/Hero';
 import { HeroSubtitle } from './components/Hero/HeroSubtitle';
@@ -30,6 +31,7 @@ import { Checkbox } from './components/Primitives/Inputs/Checkbox';
 import { Combobox } from './components/Primitives/Inputs/Combobox';
 import { Form } from './components/Primitives/Inputs/Form';
 import { Input } from './components/Primitives/Inputs/Input';
+import { Label } from './components/Primitives/Inputs/Label';
 import { RadioGroup } from './components/Primitives/Inputs/RadioGroup';
 import { Select } from './components/Primitives/Inputs/Select';
 import { Slider } from './components/Primitives/Inputs/Slider';
@@ -51,6 +53,7 @@ import { Toast } from './components/Primitives/Overlays/Toast';
 import { Tooltip } from './components/Primitives/Overlays/Tooltip';
 import { Accordion } from './components/Primitives/Structure/Accordion';
 import { Collapsible } from './components/Primitives/Structure/Collapsible';
+import { Command } from './components/Primitives/Structure/Command';
 import { ContextMenu } from './components/Primitives/Structure/ContextMenu';
 import { Dialog } from './components/Primitives/Structure/Dialog';
 import { DropdownMenu } from './components/Primitives/Structure/DropdownMenu';
@@ -95,6 +98,7 @@ const componentRegistry: Record<string, { exportName: string; meta: RemoteCompon
   "ui_canvas_layout": { exportName: "CanvasLayout", meta: (CanvasLayout as any).meta },
   "ui_canvas_switch": { exportName: "CanvasSwitch", meta: (CanvasSwitch as any).meta },
   "ui_canvas_text": { exportName: "CanvasText", meta: (CanvasText as any).meta },
+  "ui_sticky_header": { exportName: "StickyHeader", meta: (StickyHeader as any).meta },
   "ui_footer": { exportName: "Footer", meta: (Footer as any).meta },
   "ui_hero": { exportName: "Hero", meta: (Hero as any).meta },
   "ui_hero_subtitle": { exportName: "HeroSubtitle", meta: (HeroSubtitle as any).meta },
@@ -111,6 +115,7 @@ const componentRegistry: Record<string, { exportName: string; meta: RemoteCompon
   "combobox": { exportName: "Combobox", meta: (Combobox as any).meta },
   "ui_shadcn_form": { exportName: "Form", meta: (Form as any).meta },
   "ui_shadcn_input": { exportName: "Input", meta: (Input as any).meta },
+  "ui_shadcn_label": { exportName: "Label", meta: (Label as any).meta },
   "radiogroup": { exportName: "RadioGroup", meta: (RadioGroup as any).meta },
   "select": { exportName: "Select", meta: (Select as any).meta },
   "slider": { exportName: "Slider", meta: (Slider as any).meta },
@@ -132,6 +137,7 @@ const componentRegistry: Record<string, { exportName: string; meta: RemoteCompon
   "tooltip": { exportName: "Tooltip", meta: (Tooltip as any).meta },
   "accordion": { exportName: "Accordion", meta: (Accordion as any).meta },
   "collapsible": { exportName: "Collapsible", meta: (Collapsible as any).meta },
+  "command": { exportName: "Command", meta: (Command as any).meta },
   "contextmenu": { exportName: "ContextMenu", meta: (ContextMenu as any).meta },
   "dialog": { exportName: "Dialog", meta: (Dialog as any).meta },
   "dropdownmenu": { exportName: "DropdownMenu", meta: (DropdownMenu as any).meta },

@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { colors, spacing, radii } from '@FastIntent/design-tokens';
+import { colors, spacing, radii } from '@fastintent/design-tokens';
 
 /**
  * 📘 MANUAL: COMPONENTES POLIMÓRFICOS Y TOKENS
  * 
  * 1. DESIGN TOKENS: Nunca usar hex-codes directos. 
- *    Usar la librería @FastIntent/design-tokens.
+ *    Usar la librería @fastintent/design-tokens.
  * 
  * 2. POLIMORFISMO (Prop 'as'): 
  *    Permite que un componente cambie su tag HTML raíz sin perder estilos.
@@ -89,7 +89,7 @@ export const Hero = <C extends React.ElementType = 'section'>({
   ],
   dependencies: { 
     "framer-motion": "latest",
-    "@FastIntent/design-tokens": "1.0.0" 
+    "@fastintent/design-tokens": "1.0.0" 
   }
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors, spacing, typography } from '@FastIntent/design-tokens';
+import { colors, spacing, typography } from '@fastintent/design-tokens';
 import { sanitizeProps } from '../../lib/sanitizer';
 
 type FooterBaseProps = {
@@ -158,7 +158,7 @@ export const Footer = <C extends React.ElementType = 'footer'>({
     }
   },
   dependencies: { 
-    "@FastIntent/design-tokens": "1.0.0" 
+    "@fastintent/design-tokens": "1.0.0" 
   }
 };
 

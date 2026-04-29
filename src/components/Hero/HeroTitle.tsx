@@ -36,6 +36,7 @@ export const HeroTitle = ({
   type: "ui_hero_title",
   name: "Hero Title",
   version: "1.0.0",
+  category: "Marketing",
   isSlot: true, visibility: 'internal',
   parentConstraint: "ui_hero", // 🛡️ Protección de jerarquía
   description: "Título dinámico para el Hero Section.",

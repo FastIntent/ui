@@ -48,11 +48,11 @@ export const CartBadge = ({
   renderMode: "client",
   requiresProvider: {
     name: "CartProvider",
-    importPath: "@FastIntent/ui",
+    importPath: "@fastintent/ui",
   },
   consumesContext: {
     hookName: "useCart",
-    importPath: "@FastIntent/ui",
+    importPath: "@fastintent/ui",
     fields: ["totalItems"],
   },
   propControls: [

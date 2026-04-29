@@ -1,45 +1,50 @@
-import React from 'react';
+"use client";
 
-interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  content: string;
-  variant?: 'default' | 'secondary' | 'outline' | 'destructive';
-}
+import * as React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "../../../lib/utils";
 
-export const Badge: React.FC<BadgeProps> = ({
-  content,
-  variant = 'default',
-  className = '',
-  ...rest
-}) => {
-  const variants = {
-    default: 'bg-primary text-primary-foreground',
-    secondary: 'bg-secondary text-secondary-foreground',
-    outline: 'border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300',
-    destructive: 'bg-destructive text-destructive-foreground',
-  };
+const badgeVariants = cva(
+  "inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+  {
+    variants: {
+      variant: {
+        default: "border-transparent bg-primary text-primary-foreground",
+        secondary: "border-transparent bg-secondary text-secondary-foreground",
+        destructive: "border-transparent bg-destructive text-destructive-foreground",
+        outline: "border-border bg-background text-foreground",
+        ghost: "border-transparent bg-transparent px-0",
+      },
+    },
+    defaultVariants: { variant: "outline" },
+  }
+);
 
-  return (
-    <span {...rest} className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors ${variants[variant]} ${className}`}>
-      {content}
-    </span>
-  );
-};
+export interface BadgeProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof badgeVariants> {}
 
-Badge.displayName = 'Badge';
+export const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
+  ({ className, variant, ...props }, ref) => {
+    return <div ref={ref} className={cn(badgeVariants({ variant }), className)} {...props} />;
+  }
+);
+Badge.displayName = "Badge";
+
+export { badgeVariants };
 
 (Badge as any).meta = {
   type: "ui_shadcn_badge",
-  name: "Badge (Atomic)",
-  version: "1.0.0",
+  name: "Badge",
+  version: "2.0.0",
   category: "Data Display",
-  description: "A small label badge for tags, status, or categories.",
+  description: "Composable shadcn Badge with CVA-driven variants.",
   propControls: [
-    { name: "content", label: "Text", type: "string" },
     {
       name: "variant",
       label: "Variant",
       type: "select",
-      options: ["default", "secondary", "outline", "destructive"],
+      options: ["default", "secondary", "destructive", "outline", "ghost"],
     },
-  ]
+  ],
 };

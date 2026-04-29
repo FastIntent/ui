@@ -1,52 +1,46 @@
-import React from 'react';
+"use client";
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  description?: string;
-  className?: string;
-}
+import * as React from "react";
+import { cn } from "../../../lib/utils";
 
-export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ label, description, className, type, children, ...props }, ref) => {
-    // children destructured and discarded — <input> is a void element
+export const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
+  ({ className, type, ...props }, ref) => {
     return (
-      <div className="w-full space-y-1.5">
-        {label && (
-          <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-            {label}
-          </label>
+      <input
+        type={type}
+        data-slot="input"
+        className={cn(
+          "flex h-9 w-full min-w-0 rounded-md border border-border bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow]",
+          "file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground",
+          "placeholder:text-muted-foreground",
+          "selection:bg-primary selection:text-primary-foreground",
+          "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
+          "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
+          "aria-invalid:ring-destructive/20 aria-invalid:border-destructive",
+          className
         )}
-        <input
-          type={type}
-          className={`flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${className}`}
-          ref={ref}
-          {...props}
-        />
-        {description && (
-          <p className="text-xs text-muted-foreground">{description}</p>
-        )}
-      </div>
+        ref={ref}
+        {...props}
+      />
     );
   }
 );
-
-Input.displayName = 'Input';
+Input.displayName = "Input";
 
 (Input as any).meta = {
   type: "ui_shadcn_input",
-  name: "Input (Atomic)",
-  version: "1.0.0",
+  name: "Input",
+  version: "2.0.0",
   category: "Forms",
-  description: "Standard Shadcn Input for atomic form building.",
+  description: "Composable shadcn Input. Native HTML input with shadcn styling.",
   propControls: [
+    {
+      name: "type",
+      label: "Type",
+      type: "select",
+      options: ["text", "password", "email", "number", "tel", "url", "search", "date"],
+    },
     { name: "placeholder", label: "Placeholder", type: "string" },
-    { name: "label", label: "Label", type: "string" },
-    { name: "description", label: "Description", type: "string" },
-    { 
-      name: "type", 
-      label: "Type", 
-      type: "select", 
-      options: ["text", "password", "email", "number", "tel", "url"] 
-    }
-  ]
+    { name: "disabled", label: "Disabled", type: "boolean" },
+  ],
 };

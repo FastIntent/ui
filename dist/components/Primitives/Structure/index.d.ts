@@ -9,3 +9,4 @@ export * from './NavigationMenu';
 export * from './Accordion';
 export * from './Tabs';
 export * from './Collapsible';
+export * from './Command';

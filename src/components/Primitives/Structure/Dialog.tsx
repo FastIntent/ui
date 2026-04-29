@@ -56,7 +56,7 @@ Dialog.displayName = 'Dialog';
   type: "dialog",
   name: "Dialog",
   version: "1.0.0",
-  category: "Overlay",
+  category: "Overlays",
   isSlot: true,
   isContainer: true,
   description: "Modal dialog with trigger button, title, description, and content slot.",

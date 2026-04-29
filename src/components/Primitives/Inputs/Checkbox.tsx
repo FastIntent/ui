@@ -1,43 +1,37 @@
-import React from 'react';
+"use client";
 
-interface CheckboxProps {
-  label?: string;
-  checked?: boolean;
-  onCheckedChange?: (checked: boolean) => void;
-  className?: string;
-}
+import * as React from "react";
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
+import { Check } from "lucide-react";
+import { cn } from "../../../lib/utils";
 
-export const Checkbox: React.FC<CheckboxProps> = ({
-  label,
-  checked,
-  onCheckedChange,
-  className = '',
-}) => {
-  return (
-    <div className={`flex items-center space-x-2 ${className}`}>
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={(e) => onCheckedChange?.(e.target.checked)}
-        className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
-      />
-      {label && (
-        <label className="text-sm font-medium leading-none">
-          {label}
-        </label>
-      )}
-    </div>
-  );
-};
+export const Checkbox = React.forwardRef<
+  React.ElementRef<typeof CheckboxPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
+>(({ className, ...props }, ref) => (
+  <CheckboxPrimitive.Root
+    ref={ref}
+    className={cn(
+      "peer h-4 w-4 shrink-0 rounded-sm border border-border bg-background shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground data-[state=checked]:border-primary transition-colors",
+      className
+    )}
+    {...props}
+  >
+    <CheckboxPrimitive.Indicator className="flex items-center justify-center text-current">
+      <Check className="h-3.5 w-3.5" strokeWidth={3} />
+    </CheckboxPrimitive.Indicator>
+  </CheckboxPrimitive.Root>
+));
+Checkbox.displayName = CheckboxPrimitive.Root.displayName;
 
 (Checkbox as any).meta = {
   type: "ui_shadcn_checkbox",
-  name: "Checkbox (Atomic)",
-  version: "1.0.0",
+  name: "Checkbox",
+  version: "2.0.0",
   category: "Forms",
-  description: "Standard Shadcn Checkbox for form atomic building.",
+  description: "Composable shadcn Checkbox built on Radix UI primitive.",
   propControls: [
-    { name: "label", label: "Label text", type: "string" },
-    { name: "checked", label: "Is checked?", type: "boolean" }
-  ]
+    { name: "checked", label: "Checked", type: "boolean" },
+    { name: "disabled", label: "Disabled", type: "boolean" },
+  ],
 };

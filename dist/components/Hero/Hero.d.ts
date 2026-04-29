@@ -3,7 +3,7 @@ import React from 'react';
  * 📘 MANUAL: COMPONENTES POLIMÓRFICOS Y TOKENS
  *
  * 1. DESIGN TOKENS: Nunca usar hex-codes directos.
- *    Usar la librería @FastIntent/design-tokens.
+ *    Usar la librería @fastintent/design-tokens.
  *
  * 2. POLIMORFISMO (Prop 'as'):
  *    Permite que un componente cambie su tag HTML raíz sin perder estilos.

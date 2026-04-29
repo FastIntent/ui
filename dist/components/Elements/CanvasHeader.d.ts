@@ -9,6 +9,6 @@ export interface CanvasHeaderProps extends React.HTMLAttributes<HTMLDivElement> 
 }
 /**
  * 🛰️ CANVAS HEADER
- * High-performance sticky header migrated to @FastIntent/ui core.
+ * High-performance sticky header migrated to @fastintent/ui core.
  */
 export declare const CanvasHeader: React.ForwardRefExoticComponent<CanvasHeaderProps & React.RefAttributes<HTMLDivElement>>;

@@ -1,8 +1,8 @@
 "use client";
-"use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; } function _nullishCoalesce(lhs, rhsFn) { if (lhs != null) { return lhs; } else { return rhsFn(); } } function _optionalChain(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }
+"use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { newObj[key] = obj[key]; } } } newObj.default = obj; return newObj; } } function _nullishCoalesce(lhs, rhsFn) { if (lhs != null) { return lhs; } else { return rhsFn(); } } function _optionalChain(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }
 
 // src/components/Text.tsx
-var _designtokens = require('@FastIntent/design-tokens');
+var _designtokens = require('@fastintent/design-tokens');
 var _jsxruntime = require('react/jsx-runtime');
 var Text = ({
   children,
@@ -83,7 +83,7 @@ Text.meta = {
     }
   },
   dependencies: {
-    "@FastIntent/design-tokens": "1.0.0"
+    "@fastintent/design-tokens": "1.0.0"
   }
 };
 
@@ -91,7 +91,7 @@ Text.meta = {
 var _framermotion = require('framer-motion');
 
 // src/context/CartContext.tsx
-var _react = require('react'); var _react2 = _interopRequireDefault(_react);
+var _react = require('react'); var React10 = _interopRequireWildcard(_react); var React13 = _interopRequireWildcard(_react); var React14 = _interopRequireWildcard(_react); var React15 = _interopRequireWildcard(_react); var React16 = _interopRequireWildcard(_react); var React19 = _interopRequireWildcard(_react); var React20 = _interopRequireWildcard(_react); var React22 = _interopRequireWildcard(_react); var React26 = _interopRequireWildcard(_react); var React33 = _interopRequireWildcard(_react); var React36 = _interopRequireWildcard(_react);
 
 var CartContext = _react.createContext.call(void 0, void 0);
 var CartProvider = ({ children }) => {
@@ -193,11 +193,11 @@ AddToCartButton.meta = {
   renderMode: "client",
   requiresProvider: {
     name: "CartProvider",
-    importPath: "@FastIntent/ui"
+    importPath: "@fastintent/ui"
   },
   consumesContext: {
     hookName: "useCart",
-    importPath: "@FastIntent/ui",
+    importPath: "@fastintent/ui",
     fields: ["addItem"]
   },
   // ─── Editor prop controls ────────────────────────────────────────────────
@@ -291,7 +291,7 @@ Hero.meta = {
   ],
   dependencies: {
     "framer-motion": "latest",
-    "@FastIntent/design-tokens": "1.0.0"
+    "@fastintent/design-tokens": "1.0.0"
   }
 };
 var Hero_default = Hero;
@@ -319,6 +319,7 @@ HeroTitle.meta = {
   type: "ui_hero_title",
   name: "Hero Title",
   version: "1.0.0",
+  category: "Marketing",
   isSlot: true,
   visibility: "internal",
   parentConstraint: "ui_hero",
@@ -355,6 +356,7 @@ HeroSubtitle.meta = {
   type: "ui_hero_subtitle",
   name: "Hero Subtitle",
   version: "1.0.0",
+  category: "Marketing",
   isSlot: true,
   visibility: "internal",
   parentConstraint: "ui_hero",
@@ -533,7 +535,7 @@ Footer.meta = {
     }
   },
   dependencies: {
-    "@FastIntent/design-tokens": "1.0.0"
+    "@fastintent/design-tokens": "1.0.0"
   }
 };
 
@@ -582,11 +584,11 @@ CartBadge.meta = {
   renderMode: "client",
   requiresProvider: {
     name: "CartProvider",
-    importPath: "@FastIntent/ui"
+    importPath: "@fastintent/ui"
   },
   consumesContext: {
     hookName: "useCart",
-    importPath: "@FastIntent/ui",
+    importPath: "@fastintent/ui",
     fields: ["totalItems"]
   },
   propControls: [
@@ -669,7 +671,7 @@ CardWrapper.meta = {
       dataBinding: {
         context: "CartProvider",
         hookName: "useCart",
-        importPath: "@FastIntent/ui",
+        importPath: "@fastintent/ui",
         value: "totalItems"
       }
     }
@@ -983,6 +985,476 @@ CanvasSwitch.meta = {
   ]
 };
 
+// src/components/Elements/StickyHeader.tsx
+
+
+
+
+
+
+
+
+var HEADER_DEFAULT_MAX_WIDTH = 1240;
+var VARIANT_OPTIONS = ["h1", "h2", "h3", "h4", "h5"];
+var WIDTH_OPTIONS = ["full", "box"];
+var StickyHeader = _react.forwardRef.call(void 0, 
+  ({
+    className,
+    style: styleAttr,
+    // Props del manifest — destructuradas explícitamente para no caer en
+    // `...rest` y filtrarse al `<header>` como atributos DOM desconocidos.
+    logoText: logoTextProp,
+    logoSrc: logoSrcProp,
+    variant: variantProp,
+    width: widthProp,
+    maxWidth: maxWidthProp,
+    height: heightProp,
+    disableStickyOnScroll: disableStickyOnScrollProp,
+    // `content` viene del wrapper editor pero el componente no lo usa.
+    content: _content,
+    // Props v1 que pueden persistir en projectos pre-migración. La
+    // migración declarada `2.0.0` es null (no-op) en el catálogo JSON
+    // porque las funciones no se serializan; las descartamos acá para
+    // que NO caigan en `...rest` ni se filtren al DOM como atributos
+    // desconocidos. El usuario re-customiza los slots vía el subtree
+    // por defecto que el editor hidrata al re-insertar.
+    links: _legacyLinks,
+    buttonText: _legacyButtonText,
+    buttonHref: _legacyButtonHref,
+    children,
+    ...rest
+  }, ref) => {
+    const logoText = logoTextProp || "Shop";
+    const logoSrc = typeof logoSrcProp === "string" ? logoSrcProp.trim() : "";
+    const styleVariant = VARIANT_OPTIONS.includes(
+      variantProp
+    ) ? variantProp : "h1";
+    const widthMode = WIDTH_OPTIONS.includes(
+      widthProp
+    ) ? widthProp : "full";
+    const maxWidth = typeof maxWidthProp === "number" && maxWidthProp > 0 ? maxWidthProp : HEADER_DEFAULT_MAX_WIDTH;
+    const minHeight = typeof heightProp === "number" && heightProp > 0 ? heightProp : 0;
+    const disableStickyOnScroll = disableStickyOnScrollProp === true;
+    const childArr = React10.default.Children.toArray(children);
+    const slotA = _nullishCoalesce(childArr[0], () => ( null));
+    const slotB = _nullishCoalesce(childArr[1], () => ( null));
+    const headerRef = _react.useRef.call(void 0, null);
+    const [drawerOpen, setDrawerOpen] = _react.useState.call(void 0, false);
+    const closeDrawer = _react.useCallback.call(void 0, () => setDrawerOpen(false), []);
+    const [sticky, setSticky] = _react.useState.call(void 0, false);
+    const [visible, setVisible] = _react.useState.call(void 0, false);
+    const lastYRef = _react.useRef.call(void 0, 0);
+    _react.useEffect.call(void 0, () => {
+      if (disableStickyOnScroll) return;
+      const onScroll = () => {
+        const y = window.scrollY;
+        const down = y > lastYRef.current;
+        lastYRef.current = y;
+        if (y <= 0) {
+          setSticky(false);
+          setVisible(false);
+        } else if (down && y > 300 && !sticky) {
+          setSticky(true);
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => setVisible(true));
+          });
+        }
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      return () => window.removeEventListener("scroll", onScroll);
+    }, [sticky, disableStickyOnScroll]);
+    _react.useEffect.call(void 0, () => {
+      if (typeof document === "undefined") return;
+      document.body.style.overflow = drawerOpen ? "hidden" : "";
+      return () => {
+        document.body.style.overflow = "";
+      };
+    }, [drawerOpen]);
+    _react.useEffect.call(void 0, () => {
+      if (!drawerOpen) return;
+      const onKey = (e) => {
+        if (e.key === "Escape") closeDrawer();
+      };
+      window.addEventListener("keydown", onKey);
+      return () => window.removeEventListener("keydown", onKey);
+    }, [drawerOpen, closeDrawer]);
+    const [headerH, setHeaderH] = _react.useState.call(void 0, 64);
+    _react.useEffect.call(void 0, () => {
+      if (!headerRef.current) return;
+      const measure = () => setHeaderH(_nullishCoalesce(_optionalChain([headerRef, 'access', _7 => _7.current, 'optionalAccess', _8 => _8.offsetHeight]), () => ( 64)));
+      measure();
+      const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(measure) : null;
+      if (ro && headerRef.current) ro.observe(headerRef.current);
+      window.addEventListener("resize", measure);
+      return () => {
+        _optionalChain([ro, 'optionalAccess', _9 => _9.disconnect, 'call', _10 => _10()]);
+        window.removeEventListener("resize", measure);
+      };
+    }, []);
+    const containerStyle = {
+      ...styleAttr || {},
+      ...widthMode === "box" ? { "--header-max-w": `${maxWidth}px` } : {},
+      ...minHeight > 0 ? { "--header-min-h": `${minHeight}px` } : {}
+    };
+    const innerWidthCls = widthMode === "box" ? "md:max-w-[var(--header-max-w)]" : "max-w-full";
+    const innerMinHCls = minHeight > 0 ? "md:min-h-[var(--header-min-h)]" : "";
+    const innerLayoutCls = (() => {
+      switch (styleVariant) {
+        case "h2":
+          return "md:grid md:grid-cols-3 md:items-center";
+        case "h3":
+          return "md:flex md:flex-col md:gap-2";
+        case "h4":
+        case "h5":
+        case "h1":
+        default:
+          return "md:flex md:items-center md:justify-between";
+      }
+    })();
+    const renderDesktopBody = () => {
+      const Logo = /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "flex items-center gap-3 shrink-0", children: logoSrc ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+          "img",
+          {
+            src: logoSrc,
+            alt: logoText,
+            className: "h-8 w-auto object-contain"
+          }
+        )
+      ) : /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "font-bold text-[18px] md:text-[20px] text-zinc-900", children: logoText }) });
+      const SlotA = /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { "data-slot": "a", className: "hidden md:flex items-center gap-6", children: slotA });
+      const SlotB = /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { "data-slot": "b", className: "hidden md:flex items-center gap-4", children: slotB });
+      switch (styleVariant) {
+        case "h2":
+          return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _jsxruntime.Fragment, { children: [
+            SlotA,
+            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "flex justify-center", children: Logo }),
+            SlotB
+          ] });
+        case "h3":
+          return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _jsxruntime.Fragment, { children: [
+            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "flex justify-center", children: Logo }),
+            /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "hidden md:flex items-center justify-between gap-6", children: [
+              slotA && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { "data-slot": "a", className: "flex items-center gap-6", children: slotA }),
+              slotB && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { "data-slot": "b", className: "flex items-center gap-4", children: slotB })
+            ] })
+          ] });
+        case "h4":
+          return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _jsxruntime.Fragment, { children: [
+            Logo,
+            /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "hidden md:flex items-center gap-6", children: [
+              slotA && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { "data-slot": "a", className: "flex items-center gap-6", children: slotA }),
+              slotB && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { "data-slot": "b", className: "flex items-center gap-4", children: slotB })
+            ] })
+          ] });
+        case "h5":
+          return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _jsxruntime.Fragment, { children: [
+            Logo,
+            /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "hidden md:flex flex-col items-end gap-1", children: [
+              slotA && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { "data-slot": "a", className: "flex items-center gap-6", children: slotA }),
+              slotB && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { "data-slot": "b", className: "flex items-center gap-4", children: slotB })
+            ] })
+          ] });
+        case "h1":
+        default:
+          return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _jsxruntime.Fragment, { children: [
+            Logo,
+            SlotA,
+            SlotB
+          ] });
+      }
+    };
+    const headerInner = /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+      "div",
+      {
+        className: cn2(
+          "relative z-50 mx-auto flex items-center justify-between px-5 md:px-10 py-4",
+          innerWidthCls,
+          innerMinHCls,
+          innerLayoutCls
+        ),
+        children: [
+          renderDesktopBody(),
+          /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            HamburgerButton,
+            {
+              open: drawerOpen,
+              onClick: () => setDrawerOpen((v) => !v)
+            }
+          )
+        ]
+      }
+    );
+    return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _jsxruntime.Fragment, { children: [
+      /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+        "header",
+        {
+          ref: (el) => {
+            headerRef.current = el;
+            if (typeof ref === "function") ref(el);
+            else if (ref)
+              ref.current = el;
+          },
+          className: cn2(
+            "relative z-50 bg-white border-b border-zinc-200 w-full",
+            className
+          ),
+          style: containerStyle,
+          ...rest,
+          children: [
+            headerInner,
+            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+              MobileDrawer,
+              {
+                open: drawerOpen,
+                onClose: closeDrawer,
+                offsetTop: headerH,
+                slotA,
+                slotB
+              }
+            )
+          ]
+        }
+      ),
+      sticky && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        "header",
+        {
+          className: cn2(
+            "fixed top-0 left-0 right-0 z-50 bg-white border-b border-zinc-200 shadow-sm",
+            "transition-transform duration-500",
+            visible ? "translate-y-0" : "-translate-y-full"
+          ),
+          children: headerInner
+        }
+      )
+    ] });
+  }
+);
+StickyHeader.displayName = "StickyHeader";
+var HamburgerButton = ({ open, onClick }) => /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+  "button",
+  {
+    type: "button",
+    onClick,
+    className: "md:hidden relative w-6 h-5 flex flex-col justify-between",
+    "aria-label": open ? "Close menu" : "Open menu",
+    "aria-expanded": open,
+    children: [
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        "span",
+        {
+          className: cn2(
+            "block h-[2px] w-6 bg-zinc-900 rounded-full transition-all duration-300 origin-center",
+            open && "translate-y-[9px] rotate-45"
+          )
+        }
+      ),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        "span",
+        {
+          className: cn2(
+            "block h-[2px] w-6 bg-zinc-900 rounded-full transition-all duration-300",
+            open && "opacity-0 scale-x-0"
+          )
+        }
+      ),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+        "span",
+        {
+          className: cn2(
+            "block h-[2px] w-6 bg-zinc-900 rounded-full transition-all duration-300 origin-center",
+            open && "-translate-y-[9px] -rotate-45"
+          )
+        }
+      )
+    ]
+  }
+);
+var MobileDrawer = ({
+  open,
+  onClose,
+  offsetTop,
+  slotA,
+  slotB
+}) => {
+  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _jsxruntime.Fragment, { children: [
+    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "div",
+      {
+        className: cn2(
+          "fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 md:hidden",
+          open ? "opacity-100" : "opacity-0 pointer-events-none"
+        ),
+        style: { top: offsetTop },
+        onClick: onClose,
+        "aria-hidden": "true"
+      }
+    ),
+    /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+      "div",
+      {
+        className: cn2(
+          "fixed right-0 z-50 w-[280px] max-w-[80vw] bg-white border-l border-zinc-200",
+          "shadow-[-4px_0_24px_rgba(0,0,0,0.1)] transition-transform duration-300 ease-out",
+          "flex flex-col md:hidden",
+          open ? "translate-x-0" : "translate-x-full"
+        ),
+        style: { top: offsetTop, height: `calc(100vh - ${offsetTop}px)` },
+        role: "dialog",
+        "aria-modal": "true",
+        onClick: onClose,
+        children: [
+          slotA && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "div",
+            {
+              "data-slot": "a",
+              className: "flex flex-col px-5 pt-6 pb-2 gap-1 [&_a]:text-[15px] [&_a]:font-medium [&_a]:text-zinc-900 [&_a]:py-3 [&_a]:border-b [&_a]:border-zinc-200",
+              children: slotA
+            }
+          ),
+          slotB && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+            "div",
+            {
+              "data-slot": "b",
+              className: "mt-auto px-5 pb-10 flex flex-col items-center gap-6 [&_a]:w-full [&_a]:text-center",
+              children: slotB
+            }
+          )
+        ]
+      }
+    )
+  ] });
+};
+StickyHeader.meta = {
+  type: "ui_sticky_header",
+  name: "Sticky Header",
+  version: "2.0.0",
+  // Cadena de migraciones declaradas. La migración 2.0.0 es BREAKING:
+  // las props `links`, `buttonText`, `buttonHref` desaparecen en favor de
+  // dos slots editables. La función transforma el `props` shape vieja al
+  // shape nuevo, descartando lo que ya no aplica. El editor se encarga de
+  // hidratar los slots default vía `meta.defaultChildren` al reinsertar
+  // (no hay forma de re-construir contenido editable desde un string CSV
+  // de links pasado como prop sin perder fidelidad — el migrate sólo
+  // limpia y deja al usuario re-customizar el subtree).
+  // 2.0.0 es declarativamente no-op: las funciones no sobreviven a
+  // JSON.stringify del catálogo y `applyComponentMigration` (modal del
+  // editor) lee desde el catalog JSON. Las props v1 (links, buttonText,
+  // buttonHref) sobreviven en el state pero el componente las descarta
+  // en el destructure — no se filtran al DOM ni rompen render. El stamp
+  // sube a 2.0.0 con appliedSteps=["1.1.0", "2.0.0"], el badge desaparece.
+  migrations: {
+    "1.1.0": null,
+    "2.0.0": null
+  },
+  category: "Navigation",
+  description: "Header con scroll-reveal sticky, dos slots editables (nav + cta), 5 estilos de layout y drawer mobile. Logo configurable como texto o imagen.",
+  isContainer: true,
+  propControls: [
+    { name: "logoText", label: "Logo (texto)", type: "string", defaultValue: "Shop" },
+    { name: "logoSrc", label: "Logo (URL imagen)", type: "string", defaultValue: "" },
+    {
+      name: "variant",
+      label: "Estilo de layout",
+      type: "select",
+      options: ["h1", "h2", "h3", "h4", "h5"],
+      defaultValue: "h1"
+    },
+    {
+      name: "width",
+      label: "Ancho",
+      type: "select",
+      options: ["full", "box"],
+      defaultValue: "full"
+    },
+    {
+      name: "maxWidth",
+      label: "Ancho m\xE1ximo (px, s\xF3lo si width=box)",
+      type: "number",
+      defaultValue: HEADER_DEFAULT_MAX_WIDTH
+    },
+    {
+      name: "height",
+      label: "Altura m\xEDnima desktop (px, 0=auto)",
+      type: "number",
+      defaultValue: 0
+    }
+  ],
+  /**
+   * Subtree default universal — idéntico para landing, e-commerce, dashboard.
+   * El editor lo hidrata al insertar (ver `insertNewComponent` →
+   * `insertRemoteElement` → `defaultChildren`). El usuario edita textos /
+   * URLs en cada link, agrega/elimina items dentro del slot.
+   */
+  defaultChildren: [
+    {
+      type: "slot",
+      name: "Nav links",
+      styles: {},
+      children: [
+        {
+          type: "html_tag",
+          tag: "a",
+          name: "Home link",
+          content: "Home",
+          styles: { color: "#3f3f46", fontSize: 14, fontWeight: 500 },
+          props: { href: "#" }
+        },
+        {
+          type: "html_tag",
+          tag: "a",
+          name: "Shop link",
+          content: "Shop",
+          styles: { color: "#3f3f46", fontSize: 14, fontWeight: 500 },
+          props: { href: "#" }
+        },
+        {
+          type: "html_tag",
+          tag: "a",
+          name: "About link",
+          content: "About",
+          styles: { color: "#3f3f46", fontSize: 14, fontWeight: 500 },
+          props: { href: "#" }
+        },
+        {
+          type: "html_tag",
+          tag: "a",
+          name: "Contact link",
+          content: "Contact",
+          styles: { color: "#3f3f46", fontSize: 14, fontWeight: 500 },
+          props: { href: "#" }
+        }
+      ]
+    },
+    {
+      type: "slot",
+      name: "CTA",
+      styles: {},
+      children: [
+        {
+          type: "html_tag",
+          tag: "a",
+          name: "Sign in CTA",
+          content: "Sign in",
+          styles: {
+            backgroundColor: "#18181b",
+            color: "#ffffff",
+            paddingLeft: 20,
+            paddingRight: 20,
+            paddingTop: 10,
+            paddingBottom: 10,
+            borderRadius: 6,
+            fontSize: 13,
+            fontWeight: 600
+          },
+          props: { href: "#" }
+        }
+      ]
+    }
+  ]
+};
+
 // src/components/Navbar.tsx
 
 
@@ -1001,7 +1473,7 @@ var Navbar = _react.forwardRef.call(void 0,
         children: [
           /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "font-extrabold text-zinc-900 text-base md:text-2xl tracking-tighter shrink-0", children: logoText }),
           /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex items-center gap-4 md:gap-8 grow justify-end", children: [
-            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "hidden md:flex gap-8 px-8 items-center", children: _optionalChain([links, 'optionalAccess', _7 => _7.map, 'call', _8 => _8((link, idx) => {
+            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "hidden md:flex gap-8 px-8 items-center", children: _optionalChain([links, 'optionalAccess', _11 => _11.map, 'call', _12 => _12((link, idx) => {
               const label = typeof link === "string" ? link : link.label;
               const href = typeof link === "string" ? "#" : link.href;
               return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
@@ -1061,43 +1533,43 @@ Navbar.meta = {
 
 // src/components/Primitives/Actions/Button.tsx
 
+var _classvarianceauthority = require('class-variance-authority');
 
-var Button = _react2.default.forwardRef(
-  ({ className, variant = "default", size = "default", content, children, ...props }, ref) => {
-    const variants = {
-      default: "bg-primary text-primary-foreground hover:bg-primary/90",
-      destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-      outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-      secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-      ghost: "hover:bg-accent hover:text-accent-foreground",
-      link: "text-primary underline-offset-4 hover:underline"
-    };
-    const sizes = {
-      default: "h-10 px-4 py-2",
-      sm: "h-9 rounded-md px-3",
-      lg: "h-11 rounded-md px-8",
-      icon: "h-10 w-10"
-    };
-    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
-      "button",
-      {
-        className: `inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${variants[variant]} ${sizes[size]} ${className}`,
-        ref,
-        ...props,
-        children: content || children
+var buttonVariants = _classvarianceauthority.cva.call(void 0, 
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline: "border border-border bg-background hover:bg-accent hover:text-accent-foreground",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline"
+      },
+      size: {
+        default: "h-9 px-4 py-2",
+        sm: "h-8 rounded-md px-3 text-xs",
+        lg: "h-10 rounded-md px-6",
+        icon: "h-9 w-9"
       }
-    );
+    },
+    defaultVariants: { variant: "default", size: "default" }
+  }
+);
+var Button = React10.forwardRef(
+  ({ className, variant, size, ...props }, ref) => {
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "button", { ref, className: cn(buttonVariants({ variant, size }), className), ...props });
   }
 );
 Button.displayName = "Button";
 Button.meta = {
   type: "ui_shadcn_button",
-  name: "Button (Atomic)",
-  version: "1.0.0",
+  name: "Button",
+  version: "2.0.0",
   category: "Actions",
-  description: "Standard Shadcn Button with variant support.",
+  description: "Composable shadcn Button with CVA-driven variants and sizes.",
   propControls: [
-    { name: "content", label: "Text content", type: "string" },
     {
       name: "variant",
       label: "Variant",
@@ -1253,152 +1725,225 @@ Avatar.meta = {
 
 // src/components/Primitives/DataDisplay/Badge.tsx
 
-var Badge = ({
-  content,
-  variant = "default",
-  className = "",
-  ...rest
-}) => {
-  const variants = {
-    default: "bg-primary text-primary-foreground",
-    secondary: "bg-secondary text-secondary-foreground",
-    outline: "border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300",
-    destructive: "bg-destructive text-destructive-foreground"
-  };
-  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { ...rest, className: `inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors ${variants[variant]} ${className}`, children: content });
-};
+
+
+var badgeVariants = _classvarianceauthority.cva.call(void 0, 
+  "inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+  {
+    variants: {
+      variant: {
+        default: "border-transparent bg-primary text-primary-foreground",
+        secondary: "border-transparent bg-secondary text-secondary-foreground",
+        destructive: "border-transparent bg-destructive text-destructive-foreground",
+        outline: "border-border bg-background text-foreground",
+        ghost: "border-transparent bg-transparent px-0"
+      }
+    },
+    defaultVariants: { variant: "outline" }
+  }
+);
+var Badge = React13.forwardRef(
+  ({ className, variant, ...props }, ref) => {
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { ref, className: cn(badgeVariants({ variant }), className), ...props });
+  }
+);
 Badge.displayName = "Badge";
 Badge.meta = {
   type: "ui_shadcn_badge",
-  name: "Badge (Atomic)",
-  version: "1.0.0",
+  name: "Badge",
+  version: "2.0.0",
   category: "Data Display",
-  description: "A small label badge for tags, status, or categories.",
+  description: "Composable shadcn Badge with CVA-driven variants.",
   propControls: [
-    { name: "content", label: "Text", type: "string" },
     {
       name: "variant",
       label: "Variant",
       type: "select",
-      options: ["default", "secondary", "outline", "destructive"]
+      options: ["default", "secondary", "destructive", "outline", "ghost"]
     }
   ]
 };
 
 // src/components/Primitives/DataDisplay/Card.tsx
 
-var Card = ({
-  title,
-  description,
-  image,
-  badge,
-  footer,
-  children,
-  className = "",
-  ...rest
-}) => {
-  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { ...rest, className: `rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-sm overflow-hidden ${className}`, children: [
-    image && /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "relative", children: [
-      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "w-full h-48 bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-400 text-sm", children: image }),
-      badge && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "absolute top-2 left-2 px-2 py-0.5 bg-primary text-primary-foreground text-xs font-medium rounded", children: badge })
-    ] }),
-    /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "p-4 flex flex-col gap-2", children: [
-      title && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "h3", { className: "font-semibold text-zinc-900 dark:text-white", children: title }),
-      description && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "p", { className: "text-sm text-zinc-500 dark:text-zinc-400", children: description }),
-      children
-    ] }),
-    footer && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "px-4 py-3 border-t border-zinc-200 dark:border-zinc-800 text-sm text-zinc-500", children: footer })
-  ] });
-};
+
+var Card = React14.forwardRef(
+  ({ className, ...props }, ref) => {
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "div",
+      {
+        ref,
+        "data-slot": "card",
+        className: cn(
+          "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border border-border py-6 shadow-sm",
+          className
+        ),
+        ...props
+      }
+    );
+  }
+);
 Card.displayName = "Card";
+function CardHeader({ className, ...props }) {
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+    "div",
+    {
+      "data-slot": "card-header",
+      className: cn(
+        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
+        className
+      ),
+      ...props
+    }
+  );
+}
+function CardTitle({ className, ...props }) {
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+    "div",
+    {
+      "data-slot": "card-title",
+      className: cn("leading-none font-semibold", className),
+      ...props
+    }
+  );
+}
+function CardDescription({ className, ...props }) {
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+    "div",
+    {
+      "data-slot": "card-description",
+      className: cn("text-muted-foreground text-sm", className),
+      ...props
+    }
+  );
+}
+function CardAction({ className, ...props }) {
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+    "div",
+    {
+      "data-slot": "card-action",
+      className: cn("col-start-2 row-span-2 row-start-1 self-start justify-self-end", className),
+      ...props
+    }
+  );
+}
+function CardContent({ className, ...props }) {
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+    "div",
+    {
+      "data-slot": "card-content",
+      className: cn("px-6", className),
+      ...props
+    }
+  );
+}
+function CardFooter({ className, ...props }) {
+  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+    "div",
+    {
+      "data-slot": "card-footer",
+      className: cn("flex items-center px-6 [.border-t]:pt-6", className),
+      ...props
+    }
+  );
+}
 Card.meta = {
   type: "ui_shadcn_card",
-  name: "Card (Atomic)",
-  version: "1.0.0",
+  name: "Card",
+  version: "2.0.0",
   category: "Layout",
   isSlot: true,
   isContainer: true,
-  description: "A card container with optional image, title, description, badge, and footer.",
-  propControls: [
-    { name: "title", label: "Title", type: "string" },
-    { name: "description", label: "Description", type: "string" },
-    { name: "image", label: "Image placeholder", type: "string" },
-    { name: "badge", label: "Badge text", type: "string" },
-    { name: "footer", label: "Footer text", type: "string" }
-  ]
+  description: "Composable shadcn Card. Compose with CardHeader, CardTitle, CardDescription, CardContent, CardFooter, CardAction.",
+  propControls: []
 };
 
 // src/components/Primitives/DataDisplay/Table.tsx
 
-var Table = ({
-  columns = [
-    { header: "Name", accessor: "name" },
-    { header: "Email", accessor: "email" },
-    { header: "Role", accessor: "role" }
-  ],
-  data = [
-    { name: "John Doe", email: "john@example.com", role: "Admin" },
-    { name: "Jane Smith", email: "jane@example.com", role: "Editor" },
-    { name: "Bob Wilson", email: "bob@example.com", role: "Viewer" }
-  ],
-  striped = true,
-  className = "",
-  ...rest
-}) => {
-  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { ...rest, className: `w-full overflow-auto rounded-lg border border-zinc-200 dark:border-zinc-800 ${className}`, children: /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "table", { className: "w-full text-sm", children: [
-    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "thead", { children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "tr", { className: "border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900", children: columns.map((col) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "th", { className: "px-4 py-3 text-left font-medium text-zinc-500 dark:text-zinc-400", children: col.header }, col.accessor)) }) }),
-    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "tbody", { children: data.map((row, i) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
-      "tr",
-      {
-        className: `border-b border-zinc-200 dark:border-zinc-800 last:border-0 ${striped && i % 2 === 1 ? "bg-zinc-50/50 dark:bg-zinc-900/50" : ""}`,
-        children: columns.map((col) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "td", { className: "px-4 py-3 text-zinc-900 dark:text-zinc-100", children: row[col.accessor] || "" }, col.accessor))
-      },
-      i
-    )) })
-  ] }) });
-};
+
+var Table = React15.forwardRef(
+  ({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "relative w-full overflow-auto", children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "table", { ref, className: cn("w-full caption-bottom text-sm", className), ...props }) })
+);
 Table.displayName = "Table";
+var TableHeader = React15.forwardRef(
+  ({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "thead", { ref, className: cn("[&_tr]:border-b", className), ...props })
+);
+TableHeader.displayName = "TableHeader";
+var TableBody = React15.forwardRef(
+  ({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "tbody", { ref, className: cn("[&_tr:last-child]:border-0", className), ...props })
+);
+TableBody.displayName = "TableBody";
+var TableRow = React15.forwardRef(
+  ({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+    "tr",
+    {
+      ref,
+      className: cn("border-b border-border transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted", className),
+      ...props
+    }
+  )
+);
+TableRow.displayName = "TableRow";
+var TableHead = React15.forwardRef(
+  ({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+    "th",
+    {
+      ref,
+      className: cn("h-10 px-3 text-left align-middle text-xs font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0", className),
+      ...props
+    }
+  )
+);
+TableHead.displayName = "TableHead";
+var TableCell = React15.forwardRef(
+  ({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+    "td",
+    {
+      ref,
+      className: cn("px-3 py-2.5 align-middle [&:has([role=checkbox])]:pr-0", className),
+      ...props
+    }
+  )
+);
+TableCell.displayName = "TableCell";
 Table.meta = {
   type: "table",
   name: "Table",
-  version: "1.0.0",
-  category: "DataDisplay",
-  description: "Data table with columns, rows, and optional striping.",
-  propControls: [
-    { name: "striped", label: "Striped", type: "boolean" }
-  ]
+  version: "2.0.0",
+  category: "Data Display",
+  isSlot: true,
+  isContainer: true,
+  description: "Composable shadcn Table. Compose with TableHeader, TableBody, TableRow, TableHead, TableCell.",
+  propControls: []
 };
 
 // src/components/Primitives/Inputs/Checkbox.tsx
 
-var Checkbox = ({
-  label,
-  checked,
-  onCheckedChange,
-  className = ""
-}) => {
-  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: `flex items-center space-x-2 ${className}`, children: [
-    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
-      "input",
-      {
-        type: "checkbox",
-        checked,
-        onChange: (e) => _optionalChain([onCheckedChange, 'optionalCall', _9 => _9(e.target.checked)]),
-        className: "h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
-      }
+var _reactcheckbox = require('@radix-ui/react-checkbox'); var CheckboxPrimitive = _interopRequireWildcard(_reactcheckbox);
+
+
+var Checkbox = React16.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+  CheckboxPrimitive.Root,
+  {
+    ref,
+    className: cn(
+      "peer h-4 w-4 shrink-0 rounded-sm border border-border bg-background shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground data-[state=checked]:border-primary transition-colors",
+      className
     ),
-    label && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "label", { className: "text-sm font-medium leading-none", children: label })
-  ] });
-};
+    ...props,
+    children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, CheckboxPrimitive.Indicator, { className: "flex items-center justify-center text-current", children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.Check, { className: "h-3.5 w-3.5", strokeWidth: 3 }) })
+  }
+));
+Checkbox.displayName = CheckboxPrimitive.Root.displayName;
 Checkbox.meta = {
   type: "ui_shadcn_checkbox",
-  name: "Checkbox (Atomic)",
-  version: "1.0.0",
+  name: "Checkbox",
+  version: "2.0.0",
   category: "Forms",
-  description: "Standard Shadcn Checkbox for form atomic building.",
+  description: "Composable shadcn Checkbox built on Radix UI primitive.",
   propControls: [
-    { name: "label", label: "Label text", type: "string" },
-    { name: "checked", label: "Is checked?", type: "boolean" }
+    { name: "checked", label: "Checked", type: "boolean" },
+    { name: "disabled", label: "Disabled", type: "boolean" }
   ]
 };
 
@@ -1425,7 +1970,7 @@ var Combobox = ({
     () => options.filter((o) => o.label.toLowerCase().includes(query.toLowerCase())),
     [options, query]
   );
-  const selectedLabel = _optionalChain([options, 'access', _10 => _10.find, 'call', _11 => _11((o) => o.value === selected), 'optionalAccess', _12 => _12.label]);
+  const selectedLabel = _optionalChain([options, 'access', _13 => _13.find, 'call', _14 => _14((o) => o.value === selected), 'optionalAccess', _15 => _15.label]);
   return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: `w-full ${className}`, children: [
     label && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "label", { className: "block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1.5", children: label }),
     /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "relative", children: [
@@ -1481,7 +2026,7 @@ Combobox.meta = {
 // src/components/Primitives/Inputs/Form.tsx
 
 
-var Form = _react2.default.forwardRef(
+var Form = React10.default.forwardRef(
   ({ title, description, children, className, ...props }, ref) => {
     return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
       "form",
@@ -1522,40 +2067,78 @@ Form.meta = {
 // src/components/Primitives/Inputs/Input.tsx
 
 
-var Input = _react2.default.forwardRef(
-  ({ label, description, className, type, children, ...props }, ref) => {
-    return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "w-full space-y-1.5", children: [
-      label && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "label", { className: "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70", children: label }),
-      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
-        "input",
-        {
-          type,
-          className: `flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${className}`,
-          ref,
-          ...props
-        }
-      ),
-      description && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "p", { className: "text-xs text-muted-foreground", children: description })
-    ] });
+var Input = React19.forwardRef(
+  ({ className, type, ...props }, ref) => {
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "input",
+      {
+        type,
+        "data-slot": "input",
+        className: cn(
+          "flex h-9 w-full min-w-0 rounded-md border border-border bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-[color,box-shadow]",
+          "file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground",
+          "placeholder:text-muted-foreground",
+          "selection:bg-primary selection:text-primary-foreground",
+          "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
+          "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
+          "aria-invalid:ring-destructive/20 aria-invalid:border-destructive",
+          className
+        ),
+        ref,
+        ...props
+      }
+    );
   }
 );
 Input.displayName = "Input";
 Input.meta = {
   type: "ui_shadcn_input",
-  name: "Input (Atomic)",
-  version: "1.0.0",
+  name: "Input",
+  version: "2.0.0",
   category: "Forms",
-  description: "Standard Shadcn Input for atomic form building.",
+  description: "Composable shadcn Input. Native HTML input with shadcn styling.",
   propControls: [
-    { name: "placeholder", label: "Placeholder", type: "string" },
-    { name: "label", label: "Label", type: "string" },
-    { name: "description", label: "Description", type: "string" },
     {
       name: "type",
       label: "Type",
       type: "select",
-      options: ["text", "password", "email", "number", "tel", "url"]
-    }
+      options: ["text", "password", "email", "number", "tel", "url", "search", "date"]
+    },
+    { name: "placeholder", label: "Placeholder", type: "string" },
+    { name: "disabled", label: "Disabled", type: "boolean" }
+  ]
+};
+
+// src/components/Primitives/Inputs/Label.tsx
+
+
+var Label = React20.forwardRef(
+  ({ className, ...props }, ref) => {
+    return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      "label",
+      {
+        ref,
+        "data-slot": "label",
+        className: cn(
+          "flex items-center gap-2 text-sm leading-none font-medium select-none",
+          "peer-disabled:cursor-not-allowed peer-disabled:opacity-50",
+          "group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50",
+          className
+        ),
+        ...props
+      }
+    );
+  }
+);
+Label.displayName = "Label";
+Label.meta = {
+  type: "ui_shadcn_label",
+  name: "Label",
+  version: "1.0.0",
+  category: "Forms",
+  description: "Composable shadcn Label. Associate with inputs via htmlFor.",
+  propControls: [
+    { name: "htmlFor", label: "For (input id)", type: "string" }
   ]
 };
 
@@ -1573,7 +2156,7 @@ var RadioGroup = ({
   orientation = "vertical",
   className = ""
 }) => {
-  const [selected, setSelected] = _react.useState.call(void 0, defaultValue || _optionalChain([options, 'access', _13 => _13[0], 'optionalAccess', _14 => _14.value]));
+  const [selected, setSelected] = _react.useState.call(void 0, defaultValue || _optionalChain([options, 'access', _16 => _16[0], 'optionalAccess', _17 => _17.value]));
   return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "fieldset", { className: `${className}`, children: [
     label && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "legend", { className: "text-sm font-medium text-zinc-900 dark:text-white mb-3", children: label }),
     /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: `flex ${orientation === "vertical" ? "flex-col gap-2" : "flex-row gap-4"}`, children: options.map((opt) => /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "label", { className: "flex items-center gap-2 cursor-pointer", children: [
@@ -1604,65 +2187,89 @@ RadioGroup.meta = {
 
 // src/components/Primitives/Inputs/Select.tsx
 
+var _reactselect = require('@radix-ui/react-select'); var SelectPrimitive = _interopRequireWildcard(_reactselect);
 
-var Select = ({
-  label,
-  placeholder = "Select an option",
-  options = [
-    { label: "Option 1", value: "opt1" },
-    { label: "Option 2", value: "opt2" },
-    { label: "Option 3", value: "opt3" }
-  ],
-  defaultValue,
-  className = ""
-}) => {
-  const [open, setOpen] = _react.useState.call(void 0, false);
-  const [selected, setSelected] = _react.useState.call(void 0, defaultValue || "");
-  const selectedLabel = _optionalChain([options, 'access', _15 => _15.find, 'call', _16 => _16((o) => o.value === selected), 'optionalAccess', _17 => _17.label]);
-  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: `w-full ${className}`, children: [
-    label && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "label", { className: "block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1.5", children: label }),
-    /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "relative", children: [
-      /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
-        "button",
-        {
-          type: "button",
-          onClick: () => setOpen(!open),
-          className: "flex w-full items-center justify-between rounded-md border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm transition-colors hover:border-zinc-300 dark:hover:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-primary/20",
-          children: [
-            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: selectedLabel ? "text-zinc-900 dark:text-white" : "text-zinc-500 dark:text-zinc-400", children: selectedLabel || placeholder }),
-            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "svg", { className: "h-4 w-4 text-zinc-500", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M19 9l-7 7-7-7" }) })
-          ]
-        }
-      ),
-      open && /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, _jsxruntime.Fragment, { children: [
-        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "fixed inset-0 z-40", onClick: () => setOpen(false) }),
-        /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "absolute top-full left-0 z-50 mt-1 w-full rounded-md border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 py-1 shadow-md", children: options.map((opt) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
-          "button",
-          {
-            onClick: () => {
-              setSelected(opt.value);
-              setOpen(false);
-            },
-            className: `flex w-full items-center px-3 py-1.5 text-sm transition-colors ${selected === opt.value ? "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white" : "text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-900"}`,
-            children: opt.label
-          },
-          opt.value
-        )) })
-      ] })
-    ] })
-  ] });
-};
-Select.displayName = "Select";
+
+var Select = SelectPrimitive.Root;
+var SelectGroup = SelectPrimitive.Group;
+var SelectValue = SelectPrimitive.Value;
+var SelectTrigger = React22.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+  SelectPrimitive.Trigger,
+  {
+    ref,
+    "data-slot": "select-trigger",
+    className: cn(
+      "flex h-9 w-fit items-center justify-between gap-2 rounded-md border border-border bg-background px-3 py-2 text-sm shadow-xs transition-colors outline-none",
+      "placeholder:text-muted-foreground",
+      "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
+      "disabled:cursor-not-allowed disabled:opacity-50",
+      "[&>span]:line-clamp-1",
+      className
+    ),
+    ...props,
+    children: [
+      children,
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, SelectPrimitive.Icon, { asChild: true, children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.ChevronDown, { className: "h-4 w-4 opacity-50" }) })
+    ]
+  }
+));
+SelectTrigger.displayName = SelectPrimitive.Trigger.displayName;
+var SelectContent = React22.forwardRef(({ className, children, position = "popper", ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, SelectPrimitive.Portal, { children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+  SelectPrimitive.Content,
+  {
+    ref,
+    "data-slot": "select-content",
+    position,
+    className: cn(
+      "relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border border-border bg-background text-foreground shadow-md",
+      "data-[state=open]:animate-in data-[state=closed]:animate-out",
+      "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+      "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
+      "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2",
+      "data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+      position === "popper" && "data-[side=bottom]:translate-y-1 data-[side=top]:-translate-y-1",
+      className
+    ),
+    ...props,
+    children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+      SelectPrimitive.Viewport,
+      {
+        className: cn(
+          "p-1",
+          position === "popper" && "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]"
+        ),
+        children
+      }
+    )
+  }
+) }));
+SelectContent.displayName = SelectPrimitive.Content.displayName;
+var SelectItem = React22.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+  SelectPrimitive.Item,
+  {
+    ref,
+    "data-slot": "select-item",
+    className: cn(
+      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      className
+    ),
+    ...props,
+    children: [
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "absolute right-2 flex h-3.5 w-3.5 items-center justify-center", children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, SelectPrimitive.ItemIndicator, { children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.Check, { className: "h-4 w-4" }) }) }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, SelectPrimitive.ItemText, { children })
+    ]
+  }
+));
+SelectItem.displayName = SelectPrimitive.Item.displayName;
 Select.meta = {
   type: "select",
   name: "Select",
-  version: "1.0.0",
+  version: "2.0.0",
   category: "Inputs",
-  description: "Dropdown select with custom styling.",
-  propControls: [
-    { name: "label", label: "Label", type: "text" },
-    { name: "placeholder", label: "Placeholder", type: "text" }
-  ]
+  isSlot: true,
+  isContainer: true,
+  description: "Composable shadcn Select built on Radix UI. Compose with SelectTrigger, SelectValue, SelectContent, SelectItem, SelectGroup.",
+  propControls: []
 };
 
 // src/components/Primitives/Inputs/Slider.tsx
@@ -1786,7 +2393,7 @@ Switch.meta = {
 // src/components/Primitives/Inputs/Textarea.tsx
 
 
-var Textarea = _react2.default.forwardRef(
+var Textarea = React10.default.forwardRef(
   ({ label, description, className, ...props }, ref) => {
     return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "w-full space-y-1.5", children: [
       label && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "label", { className: "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70", children: label }),
@@ -2208,30 +2815,90 @@ Separator.meta = {
 
 // src/components/Primitives/Navigation/Breadcrumb.tsx
 
-var Breadcrumb = ({
-  items = [
-    { label: "Home", href: "#" },
-    { label: "Products", href: "#" },
-    { label: "Current Page" }
-  ],
-  separator = "/",
-  className = ""
-}) => {
-  return /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "nav", { "aria-label": "Breadcrumb", className: `${className}`, children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "ol", { className: "flex items-center gap-1.5 text-sm", children: items.map((item, i) => /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "li", { className: "flex items-center gap-1.5", children: [
-    i > 0 && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "text-zinc-400 dark:text-zinc-600", children: separator }),
-    item.href && i < items.length - 1 ? /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "a", { href: item.href, className: "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors", children: item.label }) : /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "text-zinc-900 dark:text-white font-medium", children: item.label })
-  ] }, i)) }) });
-};
+
+
+var Breadcrumb = React26.forwardRef(
+  ({ ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "nav", { ref, "data-slot": "breadcrumb", "aria-label": "breadcrumb", ...props })
+);
 Breadcrumb.displayName = "Breadcrumb";
+var BreadcrumbList = React26.forwardRef(
+  ({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+    "ol",
+    {
+      ref,
+      "data-slot": "breadcrumb-list",
+      className: cn("flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground sm:gap-2.5", className),
+      ...props
+    }
+  )
+);
+BreadcrumbList.displayName = "BreadcrumbList";
+var BreadcrumbItem = React26.forwardRef(
+  ({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "li", { ref, "data-slot": "breadcrumb-item", className: cn("inline-flex items-center gap-1.5", className), ...props })
+);
+BreadcrumbItem.displayName = "BreadcrumbItem";
+var BreadcrumbLink = React26.forwardRef(
+  ({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+    "a",
+    {
+      ref,
+      "data-slot": "breadcrumb-link",
+      className: cn("transition-colors hover:text-foreground", className),
+      ...props
+    }
+  )
+);
+BreadcrumbLink.displayName = "BreadcrumbLink";
+var BreadcrumbPage = React26.forwardRef(
+  ({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+    "span",
+    {
+      ref,
+      "data-slot": "breadcrumb-page",
+      "aria-current": "page",
+      "aria-disabled": "true",
+      className: cn("font-normal text-foreground", className),
+      ...props
+    }
+  )
+);
+BreadcrumbPage.displayName = "BreadcrumbPage";
+var BreadcrumbSeparator = ({ children, className, ...props }) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+  "li",
+  {
+    "data-slot": "breadcrumb-separator",
+    role: "presentation",
+    "aria-hidden": "true",
+    className: cn("[&>svg]:size-3.5", className),
+    ...props,
+    children: _nullishCoalesce(children, () => ( /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.ChevronRight, {})))
+  }
+);
+BreadcrumbSeparator.displayName = "BreadcrumbSeparator";
+var BreadcrumbEllipsis = ({ className, ...props }) => /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
+  "span",
+  {
+    "data-slot": "breadcrumb-ellipsis",
+    role: "presentation",
+    "aria-hidden": "true",
+    className: cn("flex h-9 w-9 items-center justify-center", className),
+    ...props,
+    children: [
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.MoreHorizontal, { className: "h-4 w-4" }),
+      /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "sr-only", children: "More" })
+    ]
+  }
+);
+BreadcrumbEllipsis.displayName = "BreadcrumbEllipsis";
 Breadcrumb.meta = {
   type: "breadcrumb",
   name: "Breadcrumb",
-  version: "1.0.0",
+  version: "2.0.0",
   category: "Navigation",
-  description: "Breadcrumb navigation trail.",
-  propControls: [
-    { name: "separator", label: "Separator", type: "text" }
-  ]
+  isSlot: true,
+  isContainer: true,
+  description: "Composable shadcn Breadcrumb. Compose with BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis.",
+  propControls: []
 };
 
 // src/components/Primitives/Navigation/Pagination.tsx
@@ -2583,6 +3250,120 @@ Collapsible.meta = {
   ]
 };
 
+// src/components/Primitives/Structure/Command.tsx
+
+var _cmdk = require('cmdk');
+
+
+var Command = React33.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+  _cmdk.Command,
+  {
+    ref,
+    "data-slot": "command",
+    className: cn(
+      "flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground",
+      className
+    ),
+    ...props
+  }
+));
+Command.displayName = _cmdk.Command.displayName;
+var CommandInput = React33.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "flex items-center border-b border-border px-3", "data-slot": "command-input-wrapper", children: [
+  /* @__PURE__ */ _jsxruntime.jsx.call(void 0, _lucidereact.Search, { className: "mr-2 h-4 w-4 shrink-0 opacity-50" }),
+  /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+    _cmdk.Command.Input,
+    {
+      ref,
+      "data-slot": "command-input",
+      className: cn(
+        "flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
+        className
+      ),
+      ...props
+    }
+  )
+] }));
+CommandInput.displayName = _cmdk.Command.Input.displayName;
+var CommandList = React33.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+  _cmdk.Command.List,
+  {
+    ref,
+    "data-slot": "command-list",
+    className: cn("max-h-[300px] overflow-y-auto overflow-x-hidden", className),
+    ...props
+  }
+));
+CommandList.displayName = _cmdk.Command.List.displayName;
+var CommandEmpty = React33.forwardRef((props, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+  _cmdk.Command.Empty,
+  {
+    ref,
+    "data-slot": "command-empty",
+    className: "py-6 text-center text-sm",
+    ...props
+  }
+));
+CommandEmpty.displayName = _cmdk.Command.Empty.displayName;
+var CommandGroup = React33.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+  _cmdk.Command.Group,
+  {
+    ref,
+    "data-slot": "command-group",
+    className: cn(
+      "overflow-hidden p-1 text-foreground",
+      "[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground",
+      className
+    ),
+    ...props
+  }
+));
+CommandGroup.displayName = _cmdk.Command.Group.displayName;
+var CommandSeparator = React33.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+  _cmdk.Command.Separator,
+  {
+    ref,
+    "data-slot": "command-separator",
+    className: cn("-mx-1 h-px bg-border", className),
+    ...props
+  }
+));
+CommandSeparator.displayName = _cmdk.Command.Separator.displayName;
+var CommandItem = React33.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+  _cmdk.Command.Item,
+  {
+    ref,
+    "data-slot": "command-item",
+    className: cn(
+      "relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none",
+      "data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground",
+      "data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50",
+      "[&_svg]:size-4 [&_svg]:shrink-0",
+      className
+    ),
+    ...props
+  }
+));
+CommandItem.displayName = _cmdk.Command.Item.displayName;
+var CommandShortcut = ({ className, ...props }) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+  "span",
+  {
+    "data-slot": "command-shortcut",
+    className: cn("ml-auto text-xs tracking-widest text-muted-foreground", className),
+    ...props
+  }
+);
+CommandShortcut.displayName = "CommandShortcut";
+Command.meta = {
+  type: "command",
+  name: "Command",
+  version: "2.0.0",
+  category: "Navigation",
+  isSlot: true,
+  isContainer: true,
+  description: "Composable shadcn Command palette built on cmdk. Compose with CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandSeparator, CommandShortcut.",
+  propControls: []
+};
+
 // src/components/Primitives/Structure/ContextMenu.tsx
 
 
@@ -2688,7 +3469,7 @@ Dialog.meta = {
   type: "dialog",
   name: "Dialog",
   version: "1.0.0",
-  category: "Overlay",
+  category: "Overlays",
   isSlot: true,
   isContainer: true,
   description: "Modal dialog with trigger button, title, description, and content slot.",
@@ -2702,66 +3483,74 @@ Dialog.meta = {
 
 // src/components/Primitives/Structure/DropdownMenu.tsx
 
+var _reactdropdownmenu = require('@radix-ui/react-dropdown-menu'); var DropdownMenuPrimitive = _interopRequireWildcard(_reactdropdownmenu);
 
-var DropdownMenu = ({
-  trigger = "Menu",
-  items = [{ label: "Item 1" }, { label: "Item 2" }, { label: "Item 3" }],
-  align = "start",
-  className = ""
-}) => {
-  const [open, setOpen] = _react.useState.call(void 0, false);
-  const ref = _react.useRef.call(void 0, null);
-  _react.useEffect.call(void 0, () => {
-    const handler = (e) => {
-      if (ref.current && !ref.current.contains(e.target)) setOpen(false);
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, []);
-  const alignClasses = {
-    start: "left-0",
-    center: "left-1/2 -translate-x-1/2",
-    end: "right-0"
-  };
-  return /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, "div", { className: "relative inline-block", ref, children: [
-    /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
-      "button",
-      {
-        onClick: () => setOpen(!open),
-        className: "inline-flex items-center justify-center rounded-md text-sm font-medium border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 h-10 px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-900 dark:text-white",
-        children: trigger
-      }
+var DropdownMenu = DropdownMenuPrimitive.Root;
+var DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
+var DropdownMenuGroup = DropdownMenuPrimitive.Group;
+var DropdownMenuPortal = DropdownMenuPrimitive.Portal;
+var DropdownMenuSub = DropdownMenuPrimitive.Sub;
+var DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
+var DropdownMenuContent = React36.forwardRef(({ className, sideOffset = 4, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, DropdownMenuPrimitive.Portal, { children: /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+  DropdownMenuPrimitive.Content,
+  {
+    ref,
+    sideOffset,
+    className: cn(
+      "z-50 min-w-[8rem] overflow-hidden rounded-md border border-border bg-background p-1 text-foreground shadow-md",
+      "data-[state=open]:animate-in data-[state=closed]:animate-out",
+      "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+      "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
+      "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2",
+      "data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+      className
     ),
-    open && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: `absolute top-full mt-1 ${alignClasses[align]} z-50 min-w-[8rem] rounded-md border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-1 shadow-md ${className}`, children: items.map(
-      (item, i) => item.separator ? /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "div", { className: "my-1 h-px bg-zinc-200 dark:bg-zinc-800" }, i) : /* @__PURE__ */ _jsxruntime.jsxs.call(void 0, 
-        "button",
-        {
-          disabled: item.disabled,
-          onClick: () => setOpen(false),
-          className: "relative flex w-full items-center rounded-sm px-2 py-1.5 text-sm text-zinc-900 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed",
-          children: [
-            /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "flex-1 text-left", children: item.label }),
-            item.shortcut && /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: "ml-auto text-xs text-zinc-500", children: item.shortcut })
-          ]
-        },
-        i
-      )
-    ) })
-  ] });
-};
-DropdownMenu.displayName = "DropdownMenu";
+    ...props
+  }
+) }));
+DropdownMenuContent.displayName = DropdownMenuPrimitive.Content.displayName;
+var DropdownMenuItem = React36.forwardRef(({ className, inset, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+  DropdownMenuPrimitive.Item,
+  {
+    ref,
+    className: cn(
+      "relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0",
+      inset && "pl-8",
+      className
+    ),
+    ...props
+  }
+));
+DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName;
+var DropdownMenuLabel = React36.forwardRef(({ className, inset, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+  DropdownMenuPrimitive.Label,
+  {
+    ref,
+    className: cn("px-2 py-1.5 text-sm font-semibold", inset && "pl-8", className),
+    ...props
+  }
+));
+DropdownMenuLabel.displayName = DropdownMenuPrimitive.Label.displayName;
+var DropdownMenuSeparator = React36.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, 
+  DropdownMenuPrimitive.Separator,
+  {
+    ref,
+    className: cn("-mx-1 my-1 h-px bg-border", className),
+    ...props
+  }
+));
+DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName;
+var DropdownMenuShortcut = ({ className, ...props }) => /* @__PURE__ */ _jsxruntime.jsx.call(void 0, "span", { className: cn("ml-auto text-xs tracking-widest text-muted-foreground", className), ...props });
+DropdownMenuShortcut.displayName = "DropdownMenuShortcut";
 DropdownMenu.meta = {
   type: "dropdownmenu",
   name: "DropdownMenu",
-  version: "1.0.0",
+  version: "2.0.0",
   category: "Navigation",
-  isSlot: false,
-  isContainer: false,
-  description: "Dropdown menu with items, shortcuts, separators. For actions and navigation.",
-  propControls: [
-    { name: "trigger", label: "Trigger Text", type: "text" },
-    { name: "align", label: "Alignment", type: "select", options: ["start", "center", "end"] }
-  ]
+  isSlot: true,
+  isContainer: true,
+  description: "Composable shadcn DropdownMenu built on Radix UI. Compose with DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuLabel, DropdownMenuGroup.",
+  propControls: []
 };
 
 // src/components/Primitives/Structure/HoverCard.tsx
@@ -2791,7 +3580,7 @@ HoverCard.meta = {
   type: "hovercard",
   name: "HoverCard",
   version: "1.0.0",
-  category: "Overlay",
+  category: "Overlays",
   isSlot: true,
   isContainer: true,
   description: "Card that appears on hover. Great for user profiles, previews.",
@@ -2948,7 +3737,7 @@ Popover.meta = {
   type: "popover",
   name: "Popover",
   version: "1.0.0",
-  category: "Overlay",
+  category: "Overlays",
   isSlot: true,
   isContainer: true,
   description: "Floating content panel attached to a trigger button.",
@@ -3016,7 +3805,7 @@ Sheet.meta = {
   type: "sheet",
   name: "Sheet",
   version: "1.0.0",
-  category: "Overlay",
+  category: "Overlays",
   isSlot: true,
   isContainer: true,
   description: "Slide-out panel from any edge. Great for mobile menus, filters, settings.",
@@ -3082,6 +3871,7 @@ var componentRegistry = {
   "ui_canvas_layout": { exportName: "CanvasLayout", meta: CanvasLayout.meta },
   "ui_canvas_switch": { exportName: "CanvasSwitch", meta: CanvasSwitch.meta },
   "ui_canvas_text": { exportName: "CanvasText", meta: CanvasText.meta },
+  "ui_sticky_header": { exportName: "StickyHeader", meta: StickyHeader.meta },
   "ui_footer": { exportName: "Footer", meta: Footer.meta },
   "ui_hero": { exportName: "Hero", meta: Hero.meta },
   "ui_hero_subtitle": { exportName: "HeroSubtitle", meta: HeroSubtitle.meta },
@@ -3098,6 +3888,7 @@ var componentRegistry = {
   "combobox": { exportName: "Combobox", meta: Combobox.meta },
   "ui_shadcn_form": { exportName: "Form", meta: Form.meta },
   "ui_shadcn_input": { exportName: "Input", meta: Input.meta },
+  "ui_shadcn_label": { exportName: "Label", meta: Label.meta },
   "radiogroup": { exportName: "RadioGroup", meta: RadioGroup.meta },
   "select": { exportName: "Select", meta: Select.meta },
   "slider": { exportName: "Slider", meta: Slider.meta },
@@ -3119,6 +3910,7 @@ var componentRegistry = {
   "tooltip": { exportName: "Tooltip", meta: Tooltip.meta },
   "accordion": { exportName: "Accordion", meta: Accordion.meta },
   "collapsible": { exportName: "Collapsible", meta: Collapsible.meta },
+  "command": { exportName: "Command", meta: Command.meta },
   "contextmenu": { exportName: "ContextMenu", meta: ContextMenu.meta },
   "dialog": { exportName: "Dialog", meta: Dialog.meta },
   "dropdownmenu": { exportName: "DropdownMenu", meta: DropdownMenu.meta },
@@ -3307,4 +4099,48 @@ var CanvasBento2 = _react.forwardRef.call(void 0, ({ className, style, children,
 
 
 
-exports.Accordion = Accordion; exports.AddToCartButton = AddToCartButton; exports.AlertDialog = AlertDialog; exports.Avatar = Avatar; exports.Badge = Badge; exports.BentoBoxLegacy = CanvasBento2; exports.Breadcrumb = Breadcrumb; exports.Button = Button; exports.CanvasBento = CanvasBento; exports.CanvasButton = CanvasButton; exports.CanvasCheckbox = CanvasCheckbox; exports.CanvasHeader = CanvasHeader; exports.CanvasInput = CanvasInput; exports.CanvasLayout = CanvasLayout; exports.CanvasSwitch = CanvasSwitch; exports.CanvasText = CanvasText; exports.Card = Card; exports.CardWrapper = CardWrapper; exports.CartBadge = CartBadge; exports.CartProvider = CartProvider; exports.Checkbox = Checkbox; exports.Collapsible = Collapsible; exports.Combobox = Combobox; exports.ContextMenu = ContextMenu; exports.Dialog = Dialog; exports.DropdownMenu = DropdownMenu; exports.Footer = Footer; exports.FooterBar = FooterBar; exports.Form = Form; exports.Heading = Heading; exports.Hero = Hero_default; exports.HeroSubtitle = HeroSubtitle_default; exports.HeroTitle = HeroTitle_default; exports.HoverCard = HoverCard; exports.ImagePlaceholder = ImagePlaceholder; exports.Input = Input; exports.LayoutBox = LayoutBox; exports.Link = Link; exports.Menubar = Menubar; exports.NavBar = NavBar; exports.Navbar = Navbar; exports.NavigationMenu = NavigationMenu; exports.Pagination = Pagination; exports.Paragraph = Paragraph; exports.Popover = Popover; exports.RadioGroup = RadioGroup; exports.Section = Section; exports.Select = Select; exports.Separator = Separator; exports.Sheet = Sheet; exports.Slider = Slider; exports.Switch = Switch; exports.Table = Table; exports.Tabs = Tabs; exports.Text = Text; exports.Textarea = Textarea; exports.Toast = Toast; exports.Toggle = Toggle; exports.ToggleGroup = ToggleGroup; exports.Tooltip = Tooltip; exports.getSafeCatalog = getSafeCatalog; exports.useCart = useCart;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.Accordion = Accordion; exports.AddToCartButton = AddToCartButton; exports.AlertDialog = AlertDialog; exports.Avatar = Avatar; exports.Badge = Badge; exports.BentoBoxLegacy = CanvasBento2; exports.Breadcrumb = Breadcrumb; exports.BreadcrumbEllipsis = BreadcrumbEllipsis; exports.BreadcrumbItem = BreadcrumbItem; exports.BreadcrumbLink = BreadcrumbLink; exports.BreadcrumbList = BreadcrumbList; exports.BreadcrumbPage = BreadcrumbPage; exports.BreadcrumbSeparator = BreadcrumbSeparator; exports.Button = Button; exports.CanvasBento = CanvasBento; exports.CanvasButton = CanvasButton; exports.CanvasCheckbox = CanvasCheckbox; exports.CanvasHeader = CanvasHeader; exports.CanvasInput = CanvasInput; exports.CanvasLayout = CanvasLayout; exports.CanvasSwitch = CanvasSwitch; exports.CanvasText = CanvasText; exports.Card = Card; exports.CardAction = CardAction; exports.CardContent = CardContent; exports.CardDescription = CardDescription; exports.CardFooter = CardFooter; exports.CardHeader = CardHeader; exports.CardTitle = CardTitle; exports.CardWrapper = CardWrapper; exports.CartBadge = CartBadge; exports.CartProvider = CartProvider; exports.Checkbox = Checkbox; exports.Collapsible = Collapsible; exports.Combobox = Combobox; exports.Command = Command; exports.CommandEmpty = CommandEmpty; exports.CommandGroup = CommandGroup; exports.CommandInput = CommandInput; exports.CommandItem = CommandItem; exports.CommandList = CommandList; exports.CommandSeparator = CommandSeparator; exports.CommandShortcut = CommandShortcut; exports.ContextMenu = ContextMenu; exports.Dialog = Dialog; exports.DropdownMenu = DropdownMenu; exports.DropdownMenuContent = DropdownMenuContent; exports.DropdownMenuGroup = DropdownMenuGroup; exports.DropdownMenuItem = DropdownMenuItem; exports.DropdownMenuLabel = DropdownMenuLabel; exports.DropdownMenuPortal = DropdownMenuPortal; exports.DropdownMenuRadioGroup = DropdownMenuRadioGroup; exports.DropdownMenuSeparator = DropdownMenuSeparator; exports.DropdownMenuShortcut = DropdownMenuShortcut; exports.DropdownMenuSub = DropdownMenuSub; exports.DropdownMenuTrigger = DropdownMenuTrigger; exports.Footer = Footer; exports.FooterBar = FooterBar; exports.Form = Form; exports.Heading = Heading; exports.Hero = Hero_default; exports.HeroSubtitle = HeroSubtitle_default; exports.HeroTitle = HeroTitle_default; exports.HoverCard = HoverCard; exports.ImagePlaceholder = ImagePlaceholder; exports.Input = Input; exports.Label = Label; exports.LayoutBox = LayoutBox; exports.Link = Link; exports.Menubar = Menubar; exports.NavBar = NavBar; exports.Navbar = Navbar; exports.NavigationMenu = NavigationMenu; exports.Pagination = Pagination; exports.Paragraph = Paragraph; exports.Popover = Popover; exports.RadioGroup = RadioGroup; exports.Section = Section; exports.Select = Select; exports.SelectContent = SelectContent; exports.SelectGroup = SelectGroup; exports.SelectItem = SelectItem; exports.SelectTrigger = SelectTrigger; exports.SelectValue = SelectValue; exports.Separator = Separator; exports.Sheet = Sheet; exports.Slider = Slider; exports.StickyHeader = StickyHeader; exports.Switch = Switch; exports.Table = Table; exports.TableBody = TableBody; exports.TableCell = TableCell; exports.TableHead = TableHead; exports.TableHeader = TableHeader; exports.TableRow = TableRow; exports.Tabs = Tabs; exports.Text = Text; exports.Textarea = Textarea; exports.Toast = Toast; exports.Toggle = Toggle; exports.ToggleGroup = ToggleGroup; exports.Tooltip = Tooltip; exports.badgeVariants = badgeVariants; exports.buttonVariants = buttonVariants; exports.getSafeCatalog = getSafeCatalog; exports.useCart = useCart;
